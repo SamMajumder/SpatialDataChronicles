@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: b485f5ad-5d9b-4411-a65b-6b0b59615228
+      url: 'https://sambadimajumder.quarto.pub/spatialdatachronicles'
