@@ -1,0 +1,11 @@
+---
+title: "Delving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R"
+author: "Sambadi Majumder, PhD"
+date: "2023-10-16"
+categories: [news, code, analysis]
+image: "ezgif.com-crop.gif"
+---
+
+<iframe src="Temperature_tunes.html" width="600" height="400">
+
+</iframe>
