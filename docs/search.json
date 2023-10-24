@@ -7,6 +7,20 @@
     "text": "Greetings, fellow data enthusiasts, geographers, scientists, and the innately curious!\n\nI’m Sam, and I’m thrilled to introduce you to “Spatial Data Chronicles,” a specialized nook in the vast realm of the internet dedicated to the exploration, analysis, and understanding of spatial data.\nIn our everyday lives, we’re surrounded by spatial data, whether we’re navigating through cities using GPS, forecasting weather, or managing natural resources. Here, we delve into the intricacies of how spatial data shapes our understanding of the world, one dataset at a time.\nThis blog serves as a chronicle of my journey, sharing insights, projects, and the occasional stumbling block in the world of geospatial data science. Expect deep dives into topics ranging from GIS, remote sensing, spatial analysis, and more. We’ll explore groundbreaking technologies, innovative tools, and the latest research transforming the landscape of spatial data science. Moreover, this space champions open discussion and collaboration, reflecting my repository on GitHub. I warmly invite contributions, ideas, and discourse from our community.\nWhether you’re a seasoned professional, a student, or someone who just stumbled upon here out of interest, there’s something for you in the Chronicles. Navigate with me through this ever-evolving field, understand the stories that spatial data narrate, and let’s discover the myriad ways it influences our decisions and lives.\nStay curious, and happy mapping!"
   },
   {
+    "objectID": "posts/post-with-code/3_post.html",
+    "href": "posts/post-with-code/3_post.html",
+    "title": "Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html",
+    "href": "posts/post-with-code/1_post.html",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Sambadi Majumder, PhD - Geospatial Data Scientist",
@@ -18,6 +32,20 @@
     "href": "index.html",
     "title": "SpatialDataChronicles",
     "section": "",
-    "text": "Delving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 16, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nCreating YieldScapeUSA\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\nNo matching items"
+    "text": "Visualizing Patient Risk Profiles: An Interactive Exploration\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nExploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nDelving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 16, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nCreating YieldScapeUSA\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/2_post.html",
+    "href": "posts/post-with-code/2_post.html",
+    "title": "Delving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "posts/post-with-code/4_post.html",
+    "href": "posts/post-with-code/4_post.html",
+    "title": "Visualizing Patient Risk Profiles: An Interactive Exploration",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
   }
 ]

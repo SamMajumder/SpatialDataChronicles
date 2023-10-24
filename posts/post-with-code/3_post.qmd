@@ -1,0 +1,35 @@
+---
+title: "Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years"
+author: "Sambadi Majumder, PhD"
+date: "2023-10-17"
+categories: [news, code, analysis]
+image: "Tempo_key_mode.jpeg"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide scrollbars */
+  }
+  iframe {
+    position: absolute;
+    top: 38%;
+    left: 0%;
+    width: 100%;
+    height: 72%;
+    border: none; /* Remove border */
+  }
+</style>
+</head>
+<body>
+
+<iframe src="1_Taylor_Swift_TidyTuesday.html"></iframe>
+
+</body>
+</html>
