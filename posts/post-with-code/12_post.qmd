@@ -1,0 +1,86 @@
+---
+title: "ChronoClimateHub: Visual Narratives of Earth's Changes"
+author: "Sambadi Majumder, PhD"
+date: "2023-10-23"
+categories: [news, code, analysis]
+image: "Streamlit.png"
+---
+
+# 
+
+## Introduction 🌍🕰️
+
+ChronoClimateHub serves as a compelling portal where time unfolds the narrative of Earth's remarkable transformations. Through a series of mesmerizing timelapse videos, viewers can witness significant shifts in climate, biodiversity, and ecological landscapes across different global regions.
+
+## Featured Timelapse Chronicles: PlanetPulse 🎥
+
+-   **ThermoPrecipTrends**: A journey through temperature and SPEI fluctuations in the contiguous US from 1960 to September 2023.
+-   **SundarbanShifts**: Explore the NDVI evolution from 2000 to 2023 within the Sundarbans, the majestic world's largest mangrove forest.
+-   **AerosolOdyssey**: Uncover the absorbing aerosol index variations in New Delhi from November 2018 to August 2023, revealing atmospheric aerosol dynamics.
+-   **SO2Saga**: Delve into the sulfur dioxide emission patterns over Staten Island, New York from November 2018 to August 2023, showcasing the interplay of natural and anthropogenic emissions.
+
+Additional chronicles are in the pipeline to further enrich the narrative of Earth's changes.
+
+[Explore the app](https://chronoclimateapp.streamlit.app/)
+
+## Data Sources 📊
+
+-   **Temperature and SPEI Data**:
+    -   Temperature Data Citation: Vose, R. S., Applequist, S., Squires, M., Durre, I., Menne, M. J., Williams, C. N. Jr., Fenimore, C., Gleason, K., & Arndt, D. (2014). NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. NOAA National Centers for Environmental Information. [DOI:10.7289/V5SX6B56](https://doi.org/10.7289/V5SX6B56) \[9/25/2023\].
+    -   SPEI Data: Sourced from the [National Drought Mitigation Center](https://www.drought.gov/data-maps-tools/us-gridded-standardized-precipitation-index-spei-nclimgrid-monthly).
+-   **NDVI Data**:
+    -   Citation: Didan, K. (2021). MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061 \[Data set\]. NASA EOSDIS Land Processes Distributed Active Archive Center. <https://doi.org/10.5067/MODIS/MOD13A2.061>
+-   **Aerosol Data**:
+    -   Data comprises the Absorbing Aerosol Index (AAI) pivotal for detecting absorbing aerosol particles in the atmosphere from COPERNICUS/S5P/NRTI/L3_AER_AI.
+-   **SO2 Data**:
+    -   Insights into sulfur dioxide emissions, sourced from the TROPOMI instrument on board the Sentinel-5P satellite, reveal both natural and anthropogenic sources from Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide.
+
+# Workflow 🔄
+
+## Core Functionality
+
+ChronoClimateHub is built using Streamlit which provides a dynamic and interactive platform for showcasing timelapse videos. Here's a brief overview of the workflow based on the provided code snippets for different segments of the platform:
+
+### **1. Page Configuration**:
+
+-   Title and icon are set for the web page using `st.set_page_config`.
+
+### **2. Sidebar & Main Content Area**:
+
+-   Sidebar contains a success message guiding users to 'Timelapse Videos'.
+-   A markdown formatted welcome message is displayed on the main content area with basic instructions for navigation.
+
+### **3. Video Display**:
+
+-   The page is divided into two columns using `st.columns`.
+-   Timelapse videos are displayed side by side in these columns, each accompanied by a caption.
+
+### **4. Data Source Information**:
+
+-   A subheader is created using `st.subheader` to segregate the data source section.
+-   Information about the data sources, including direct links to the datasets, are provided in markdown and text formats.
+
+### **5. Data Processing and Calculation**:
+
+-   Another subheader segregates the data processing section.
+-   Details about data acquisition, cleaning, processing, and used libraries are provided.
+
+Each section of the workflow corresponds to a specific feature or functionality within the ChronoClimateHub platform. The sidebar, video display, data source information, and data processing details are presented in a structured and user-friendly manner, making the platform intuitive and informative.
+
+## Libraries and Tools 🛠️
+
+The workflow utilizes various Python libraries to handle data and display the content. Key libraries include: - **streamlit**: For creating the web app and displaying content. - **pandas**: For data manipulation. - **folium**: For map rendering. - **geopandas**: For handling geometric data. - **shapely**: For manipulation and analysis of planar geometric objects. - **ee**: For accessing Google Earth Engine data. - **rasterio**: For reading and writing geospatial raster data (e.g., GeoTIFF). - **os**: For interacting with the operating system.
+
+Additionally, R libraries like **progress**, **transformr**, **gganimate**, **raster**, **ncdf4**, and the **tidyverse** suite of packages are used for data processing, visualization, and animation in the Temperature and SPEI segments of the project.
+
+## Streamlit App Deployment 🌐
+
+The Streamlit app is hosted online, providing a user-friendly interface for interacting with the visual narratives of Earth's changes. The `st.set_page_config`, `st.write`, `st.markdown`, `st.video`, and `st.columns` functions, among others, are used extensively to structure the content, display the videos, and create an engaging user experience. The sidebar and main content area are organized to provide a straightforward navigation structure, enabling users to easily explore the timelapse chronicles and understand the underlying data and processing steps.
+
+Through a combination of Streamlit's interactive features and Python's powerful data processing libraries, ChronoClimateHub offers a captivating platform to visualize and explore the profound transformations our planet is undergoing.
+
+## Code
+
+The code for this project can be found [here](https://chronoclimateapp.streamlit.app/)
+
+## 

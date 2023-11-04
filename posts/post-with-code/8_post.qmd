@@ -1,0 +1,60 @@
+---
+title: "Aerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi"
+author: "Sambadi Majumder, PhD"
+date: "2023-10-23"
+categories: [news, code, analysis]
+image: "AerosolOdyssey.gif"
+---
+
+------------------------------------------------------------------------
+
+### 
+
+#### **Introduction**
+
+Aerosol Odyssey is a captivating exploration of the Absorbing Aerosol Index (AAI) dynamics in New Delhi from November 2018 to August 2023. Utilizing interactive geospatial data visualizations, this project elucidates the atmospheric aerosol dynamics, aiding in the comprehension of environmental impacts and trends over the mentioned period.
+
+#### **Data Sources**
+
+-   **Absorbing Aerosol Index (AAI) Data:** Sourced from the European Union/ESA/Copernicus dataset stored within the Google Earth Engine data catalogue ([COPERNICUS/S5P/NRTI/L3_AER_AI](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_AER_AI)).
+-   **Shapefile for Delhi Boundaries:** Acquired from Data Meet India community [Data Meet India community](https://datameet.org/) under the Creative Commons License (CC BY 4.0).
+
+#### **Methodology**
+
+The project encompasses a series of operations aimed at geospatial analysis and visualization utilizing various Python libraries along with Google Earth Engine (GEE). The primary focus is on extracting, processing, and visualizing geospatial data over a specified region and time frame. Notable functionalities include reading geometries from files, converting geometries to GEE format, filtering datasets based on geographical bounds and time, and visualizing and exporting monthly mean Earth Engine images using Folium maps.
+
+1.  **Preprocessing:**
+    -   **Geometry Reading and Conversion:** Loaded a specific geometry from a file and converted it to Earth Engine geometry using the provided shapefile for Delhi boundaries.
+    -   **Dataset Filtering:** Defined and filtered a dataset for a specific region and time period using the Google Earth Engine API.
+2.  **Data Analysis and Visualization:**
+    -   **Monthly Mean Calculation:** Executed the monthly mean calculation for a specified time period and band, focusing on the Absorbing Aerosol Index.
+
+    -   **Visualization:** Visualized and exported monthly mean images with specified parameters, enabling an interactive exploration of aerosol concentrations and their temporal variations in New Delhi's atmosphere.
+
+    -   **Timelapse video:** A timelapse video was made to visualize the variations in monthly aerosol index values
+
+        ![](AerosolOdyssey.gif)
+
+#### **Tools and Libraries Used**
+
+-   Python
+-   Google Earth Engine (GEE)
+-   Libraries: Rasterio, Pandas, Folium, Geopandas, Shapely.
+
+#### **Key Insights**
+
+-   The project successfully unveils the temporal variations in aerosol concentrations over New Delhi's atmosphere, providing valuable insights into environmental impacts and trends.
+-   The interactive geospatial data visualizations offer a unique lens to observe and analyze aerosol dynamics in New Delhi, facilitating a deeper understanding of atmospheric aerosol behavior over time.
+
+#### **Conclusion**
+
+The methodology employed in this project seamlessly melds functionalities from various libraries and Google Earth Engine to execute geospatial analysis and visualization tasks. Through a series of defined functions and procedures, it manages to read geometries, convert them to a compatible format, filter datasets based on specified criteria, calculate monthly mean values, and visualize the results interactively. This well-organized project is a valuable asset for anyone looking to explore geospatial data analysis and visualization in Python.
+
+#### **Links**
+
+The code and the notebook for this porject can be found here:
+
+-   [GitHub Repository](https://github.com/SamMajumder/GeoVizHub/tree/main/AerosolOdyssey)
+-   [Colab Notebook](https://colab.research.google.com/drive/1fsz7WXssiJA0LOrs72dKjkMR12c5ncqq#scrollTo=K8NioTo1vyxi)
+
+------------------------------------------------------------------------

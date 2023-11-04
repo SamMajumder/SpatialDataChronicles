@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sambadi Majumder, PhD">
+<meta name="dcterms.date" content="2023-10-23">
+
+<title>SpatialDataChronicles - Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">SpatialDataChronicles</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">Sambadi Majumder, PhD - Geospatial Data Scientist</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/SamMajumder" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sambadi Majumder, PhD </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 23, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. <strong>Introduction</strong></h2>
+<ul>
+<li><strong>Background</strong>:
+<ul>
+<li><p>Intraspecific functional trait divergence is a pivotal aspect of plant ecology. Understanding the underlying mechanisms of trait variation is crucial to anticipate plant responses to environmental alterations. However, exploring the relationships between functional traits and environmental factors becomes challenging, especially with large datasets. This project endeavors to address this challenge by applying eXplainable Artificial Intelligence (XAI) techniques to assess intraspecific trait variations, specifically in the diverse genotypes of Helianthus annuus, a widely distributed sunflower species.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Image (2).jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Image by Dr.&nbsp;Chase Mason</figcaption>
+</figure>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">2. <strong>Problem Statement</strong></h2>
+<ul>
+<li>The primary goal is to identify the functional traits that are most predictive of ecoregion origin, hence providing insights into intraspecific functional trait divergence using interpretable machine learning methods.</li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">3. <strong>Data</strong></h2>
+<ul>
+<li><strong>Study Area and Data Sources</strong>:
+<ul>
+<li>The data for this study is centered around genotypes of <em>Helianthus annuus</em> derived from the <a href="http://www.helianthome.org/">HeliantHome</a> database. Specifically, genotypes within the Level I ecoregions of the <strong>Great Plains</strong> and <strong>North American Deserts</strong> were used due to their significant population of <em>H. annuus</em>, in contrast to other ecoregions with scant populations rendering them statistically insignificant for analysis. The extraction process was facilitated by cross-referencing the geographic coordinates of each source population with a shapefile of <a href="https://www.epa.gov/eco-research/ecoregions-north-america#:~:text=Level%20I%20ecological%20regions%20are,Temperate%20Sierras%2C%20Tropical%20Dry%20Forests">Level I ecoregions</a> obtained from the <a href="https://www.epa.gov/eco-research/ecoregions">United States Environmental Protection Agency</a></li>
+</ul></li>
+<li><strong>Data Preparation</strong>:
+<ul>
+<li><p>This data illuminates a wide array of traits reflecting plant architecture, reproductive phenology, tissue chemistry, and morphology of multiple plant components, with trait values associated to one or more genotypes within each population. Utilizing R packages such as sf, jsonlite, and the tidyverse suite of packages, a combined dataset was generated encapsulating population coordinates, the categorical ecoregion assignment, the genotypes within these populations, and the corresponding functional trait data for each genotype. The dataset comprised <strong>88 traits from 464 genotypes belonging to 49 populations.</strong></p></li>
+<li><p>An initial examination of the dataset was conducted to ascertain the percentage of missing values for each trait. One trait, the peduncle length of the first flower, which had <strong>100%</strong> missing values, was eliminated from the dataset. The rest exhibited missing values at a rate of either <strong>27% (seed traits)</strong>, or <strong>&lt;5% (all other traits).</strong> Following this, the dataset, now housing 87 traits, was randomly segregated into a training dataset (<strong>70% of the data</strong>) and a testing dataset (<strong>30% of the data</strong>) to evaluate the predictive models on unseen data.</p></li>
+<li><p>Imputation of missing data values was executed separately on the training and testing data using the proximity matrix from a Random Forest (RF) algorithm through the R package randomForest, ensuring no data leakage occurred. The data was then subjected to Recursive Feature Elimination (RFE) on the training data to pinpoint the optimal subset of relevant traits. Post RFE, the Boruta algorithm was applied on the ‘Train optimal’ dataset to identify the most divergent traits, which were then used to train and evaluate two classifiers, Random Forest (RF) and Gradient Boosting Machine (GBM), on separate datasets dubbed ‘Train Boruta’ and ‘Test Boruta’. This methodology enabled the validation of the findings of RFE and Boruta, and facilitated an understanding of how well these identified traits predict ecoregion origin, thereby reflecting phenotypic divergence between populations from contrasting environments. Accumulated Local Effects (ALE) plots were employed to evaluate the specific impact on prediction probability of variation in trait values for each of the eight most important traits.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Workflow_post6.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Workflow diagram outlining the steps undertaken in this project</figcaption>
+</figure>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">4. <strong>Exploratory Data Analysis (EDA)</strong></h2>
+<ul>
+<li><p>Distribution of H. annuus populations as they pertain to this study with respect to the ecoregions they inhabit</p>
+<p><img src="Post_6.png" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="explainable-ai-and-modeling-methodologies" class="level2">
+<h2 class="anchored" data-anchor-id="explainable-ai-and-modeling-methodologies">5. Explainable AI and modeling methodologies</h2>
+<ul>
+<li>Two feature selection techniques, Recursive Feature Elimination and Boruta, were employed to identify the most predictive functional traits of ecoregion. Subsequently, a Random Forest and a Gradient Boosting Machine were trained using the selected traits. The results were interpreted using accumulated local effects plots, facilitating an easy comprehension of the machine learning models.</li>
+</ul>
+</section>
+<section id="main-results" class="level2">
+<h2 class="anchored" data-anchor-id="main-results">6. Main <strong>Results</strong></h2>
+<ul>
+<li><p><strong>Important Predictors</strong>:</p>
+<ul>
+<li>The analysis unveiled that the most ecoregion-predictive functional traits pertained to leaf economics, plant architecture, reproductive phenology, and floral and seed morphology.</li>
+</ul>
+<p><img src="Figure 7.jpg" class="img-fluid"></p></li>
+<li><p><strong>Distinct characteristics between the two populations</strong>:</p>
+<ul>
+<li><p>Specifically, genotypes from the North American Deserts exhibited shorter stature, fewer leaves, higher leaf nitrogen, and longer average length of phyllaries compared to those from the Great Plains.</p>
+<p><img src="Figure 8.jpg" class="img-fluid"></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">7. Conclusions</h2>
+<p>The methodology presented herein furnishes a useful tool for investigating intraspecific functional trait divergence, especially in large datasets. It helps in predicting plant responses to environmental changes, shedding light on contrasting ecological strategies across different landscapes. The approach also holds potential for testing the applicability of interspecific paradigms at intraspecific scales.</p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">8. Code</h2>
+<p>The code for this analysis can be accessible in the project <a href="https://github.com/SamMajumder/Applying-XAI-approaches-to-ecology">GitHub repository</a></p>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">9. <strong>Application</strong></h2>
+<ul>
+<li><strong>Shiny App</strong>:
+<ul>
+<li>The Shiny app, accessible <a href="https://sammajumder.shinyapps.io/TraitDivergenceIntraSpecific/">here</a>, exhibits the main results of this study. The code for the app is available in the <a href="https://github.com/SamMajumder/Applying-XAI-approaches-to-ecology-Shiny">GitHub repo</a>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">10. Reference</h2>
+<p>Bercovich N, N Genze, M Todesco, GL Owens, J-S Légaré, K Huang, LH Rieseberg, DG Grimm 2022 HeliantHOME, a public and centralized database of phenotypic sunflower data. Sci Data 9: 735.</p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
