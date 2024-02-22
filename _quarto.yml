@@ -6,6 +6,9 @@ project:
 website:
   title: "SpatialDataChronicles"
   navbar:
+    left: 
+      - text: Resume
+        href: Sambadi Majumder CV.pdf
     right:
       - about.qmd
       - icon: github

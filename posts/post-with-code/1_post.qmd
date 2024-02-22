@@ -2,7 +2,7 @@
 title: "Creating YieldScapeUSA"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-11"
-categories: [Applications]
+categories: [Applications and Dashboards]
 image: "app_image.jpg"
 ---
 
@@ -38,7 +38,7 @@ The app is engineered to visualize user-provided data, fostering a wide spectrum
 
 ### Input Expectations
 
-The app requires data in RDS format containing spatial information. The column expectations include:
+The app requires data in **shapefile** format containing spatial information. The column expectations include:
 
 -   **Geometry Column**: Representing the spatial geometry of each data point.
 -   **Time Column**: Representing the time dimension (e.g., year) of the data.

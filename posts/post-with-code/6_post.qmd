@@ -2,7 +2,7 @@
 title: "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [ML Projects, Dashboards]
+categories: [ML Projects]
 image: "Post_6.png"
 ---
 

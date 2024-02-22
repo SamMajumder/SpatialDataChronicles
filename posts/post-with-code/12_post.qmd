@@ -2,7 +2,7 @@
 title: "ChronoClimateHub: Visual Narratives of Earth's Changes"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [Dashboards]
+categories: [Applications and Dashboards]
 image: "Streamlit.png"
 ---
 

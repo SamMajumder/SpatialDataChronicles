@@ -2,7 +2,7 @@
 title: "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [ML Projects]
 image: "newplot.png"
 ---
 
