@@ -2,7 +2,7 @@
 title: "Sundarban Shifts"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [Data Visualization]
 image: "Sundarban_Biodiversity_beats.gif"
 ---
 
@@ -55,6 +55,6 @@ Essential libraries and tools utilized in this project include:
 
 This project encapsulates a meticulous workflow from data extraction to visualization, rendering an engaging narrative of vegetation dynamics in the Sundarbans Mangroves. Through well-structured steps, it delivers an insightful glimpse into the changing vegetation health, underscoring the importance of informed conservation strategies in this ecologically significant region.
 
-## Code: 
+## Code:
 
 The code for this project can be found in the [GitHub repository](https://github.com/SamMajumder/GeoVizHub/tree/main/SundarbanShifts) and the [Colab Notebook](https://colab.research.google.com/drive/1gdWtmI1pc-Ed83NPkCXm1icVP-U0yjt8)

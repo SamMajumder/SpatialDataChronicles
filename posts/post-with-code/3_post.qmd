@@ -2,15 +2,21 @@
 title: "Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-17"
-categories: [news, code, analysis]
+categories: [Data Visualization]
 image: "Tempo_key_mode.jpeg"
 ---
 
-<!DOCTYPE html>
+\<!DOCTYPE html\>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```{=html}
 <style>
   body, html {
     margin: 0;
@@ -26,10 +32,15 @@ image: "Tempo_key_mode.jpeg"
     border: none; /* Remove border */
   }
 </style>
+```
 </head>
+
 <body>
 
-<iframe src="1_Taylor_Swift_TidyTuesday.html"></iframe>
+<iframe src="1_Taylor_Swift_TidyTuesday.html">
+
+</iframe>
 
 </body>
+
 </html>

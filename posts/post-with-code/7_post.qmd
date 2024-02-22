@@ -2,7 +2,7 @@
 title: "A Machine Learning Approach to Study Plant Functional Trait Divergence"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [ML Projects]
 image: "Sunflower.jpg"
 ---
 

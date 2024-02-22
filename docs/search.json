@@ -7,102 +7,11 @@
     "text": "Greetings, fellow data enthusiasts, geographers, scientists, and the innately curious!\n\nI’m Sam, and I’m thrilled to introduce you to “Spatial Data Chronicles,” a specialized nook in the vast realm of the internet dedicated to the exploration, analysis, and understanding of spatial data.\nIn our everyday lives, we’re surrounded by spatial data, whether we’re navigating through cities using GPS, forecasting weather, or managing natural resources. Here, we delve into the intricacies of how spatial data shapes our understanding of the world, one dataset at a time.\nThis blog serves as a chronicle of my journey, sharing insights, projects, and the occasional stumbling block in the world of geospatial data science. Expect deep dives into topics ranging from GIS, remote sensing, spatial analysis, and more. We’ll explore groundbreaking technologies, innovative tools, and the latest research transforming the landscape of spatial data science. Moreover, this space champions open discussion and collaboration, reflecting my repository on GitHub. I warmly invite contributions, ideas, and discourse from our community.\nWhether you’re a seasoned professional, a student, or someone who just stumbled upon here out of interest, there’s something for you in the Chronicles. Navigate with me through this ever-evolving field, understand the stories that spatial data narrate, and let’s discover the myriad ways it influences our decisions and lives.\nStay curious, and happy mapping!"
   },
   {
-    "objectID": "posts/post-with-code/5_post.html",
-    "href": "posts/post-with-code/5_post.html",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "objectID": "posts/post-with-code/8_post.html",
+    "href": "posts/post-with-code/8_post.html",
+    "title": "Aerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi",
     "section": "",
-    "text": "Background:\n\nSunflower serves as a significant oilseed crop in the US, the yield of which is perceptibly affected by climate dynamics. The escalating adversities in global food production, exacerbated by climate change, underline the importance of precise crop yield forecasting. This project harnesses Explainable AI (XAI) and Machine Learning (ML) to discern the climate variables influencing sunflower yield at both national and regional scales, and to project future yields under varied emissions scenarios. This endeavor aims to facilitate better planning and management strategies by offering insights into key climate variables and their thresholds, thereby contributing to adaptive measures.\n\n\n\nImage by Dr. Chase Mason"
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#introduction",
-    "href": "posts/post-with-code/5_post.html#introduction",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "",
-    "text": "Background:\n\nSunflower serves as a significant oilseed crop in the US, the yield of which is perceptibly affected by climate dynamics. The escalating adversities in global food production, exacerbated by climate change, underline the importance of precise crop yield forecasting. This project harnesses Explainable AI (XAI) and Machine Learning (ML) to discern the climate variables influencing sunflower yield at both national and regional scales, and to project future yields under varied emissions scenarios. This endeavor aims to facilitate better planning and management strategies by offering insights into key climate variables and their thresholds, thereby contributing to adaptive measures.\n\n\n\nImage by Dr. Chase Mason"
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#problem-statement",
-    "href": "posts/post-with-code/5_post.html#problem-statement",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "2. Problem Statement",
-    "text": "2. Problem Statement\n\nThis study is committed to identifying the climate variables significantly impacting sunflower yield, and forecasting future yield per acre in the US under distinct emissions scenarios."
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#data",
-    "href": "posts/post-with-code/5_post.html#data",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "3. Data",
-    "text": "3. Data\n\nStudy Area and Data Sources:\n\nThe analysis encompasses data from 1976 to 2022, covering 192 counties across 7 states. The yield and weather data are programmatically acquired from USDA and NOAA databases using API keys, while future projections are sourced from the WorldClim repository utilizing CMIP6 models for the period 2021-2080.\n\nData Preparation:\n\nUtilizing R programming language, the data was compiled, cleaned, and processed. Extraction of data were performed at county centroids, with missing data elimination resulting in 177 counties. A split at 2004 was employed to create training and testing datasets, with state-level datasets generated for each state."
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#exploratory-data-analysis-eda",
-    "href": "posts/post-with-code/5_post.html#exploratory-data-analysis-eda",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "4. Exploratory Data Analysis (EDA)",
-    "text": "4. Exploratory Data Analysis (EDA)\n\nAverage yearly yield of oilseed sunflower from each of the 7 US states used in this study"
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#methodology",
-    "href": "posts/post-with-code/5_post.html#methodology",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "5. Methodology",
-    "text": "5. Methodology\n\nWorkflow:\n\nThe workflow, as depicted here, delineates the process of training and validating ML models on both national and state-level datasets. Recursive Feature Elimination (RFE) was employed to cherry-pick optimal predictors, with training datasets utilized to train RF, GBM, and XGB regression models. The predictive performance was evaluated employing normalized RMSE on testing datasets.\n\n\nSoftware and Programming Languages Used:\n\nThe R programming environment was instrumental for data cleaning, visualizations, and modeling."
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#main-results",
-    "href": "posts/post-with-code/5_post.html#main-results",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "6. Main Results",
-    "text": "6. Main Results\n\nImportant Predictors:\n\nRecursive feature elimination with a random forest algorithm to identify the most important predictors for yield at the national level. The predictors were ranked based on their relative importance in predicting yield using the mean decrease of root mean square error metric.\n\n\nThreshold Analysis:\n\nThe impact of four important predictors (total precipitation in July, maximum July temperature, minimum May temperature, and minimum September temperature) on yield. Accumulated Local Effects (ALE) were calculated for these predictors using both training and test datasets. The ALE plots illustrate how changes in predictor values affect yield (measured in lbs/acre).\n\n\nModel Performance:\n\nThe predictive performance of the best models at the national and state levels was evaluated using Pearson’s correlation (r) between predicted and actual values on the testing dataset. The trend of the relationship between predicted and actual values was visualized using a locally estimated scatterplot smoothing line with a 95% confidence interval. The analysis showed that the national model, based on the Random Forest regressor, performed better than state-level models in North Dakota and South Dakota, but state-level models outperformed the national model in the other states. The best state-level models for Colorado, Kansas, and Minnesota also used the Random Forest regressor, while the Gradient Boosting Machine regressor was used for Nebraska and Texas.\n\n\nFuture Yield Forecasts at the National Level:\n\nAverage yield forecasts at the national level were analyzed for three time periods and under different Socio-Economic Pathways (SSP). The average annual yield for 2022 was approximately 1940 lbs/acre, with error bars representing the standard deviation around this mean. Future yield forecasts were depicted as point estimates with error bars indicating variation (standard error), and lines illustrated yield changes across four time periods and under three SSPs. The SSPs included SSP 126 (“sustainable future”), SSP 245 (“middle of the road”), SSP 375 (“regional rivalry”), and SSP 585 (fossil-fueled development). Each SSP was characterized by specific factors such as global temperature rise, carbon dioxide emissions, economic growth, inequality, and environmental concerns.\n\n\n\n\n\nFuture Yield Forecasts at the State Level:\nAverage yield forecasts for each of the seven states were examined for three time periods and under different Socio-Economic Pathways (SSP). The latest average annual yield was represented by point estimates, with error bars indicating the standard deviation around the mean. Future yield forecasts were also depicted as point estimates with error bars reflecting the variation (standard error) around these predictions. The lines portrayed yield changes across the time periods and under four SSPs: SSP 126 (“sustainable future”), SSP 245 (“middle of the road”), SSP 375 (“regional rivalry”), and SSP 585 (fossil-fueled development). Each SSP was characterized by specific factors such as global temperature rise, carbon dioxide emissions, economic growth, inequality, and environmental concerns."
-  },
-  {
-    "objectID": "posts/post-with-code/5_post.html#application",
-    "href": "posts/post-with-code/5_post.html#application",
-    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
-    "section": "7. Application",
-    "text": "7. Application\n\nShiny App:\n\nThe Shiny app, accessible here, exhibits the main results of this study. The code for the app is available in the GitHub."
-  },
-  {
-    "objectID": "posts/post-with-code/3_post.html",
-    "href": "posts/post-with-code/3_post.html",
-    "title": "Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years",
-    "section": "",
-    "text": "&lt;!DOCTYPE html&gt;"
-  },
-  {
-    "objectID": "posts/post-with-code/1_post.html",
-    "href": "posts/post-with-code/1_post.html",
-    "title": "Creating YieldScapeUSA",
-    "section": "",
-    "text": "&lt;!DOCTYPE html&gt;"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Sambadi Majumder, PhD - Geospatial Data Scientist",
-    "section": "",
-    "text": "Sambadi Majumder, PhD - Geospatial Data Scientist\nDr. Sambadi Majumder is a seasoned Data Scientist with a rich background in ecology, agronomy, and biology, currently based in South Royalton, Vermont. With a career marked by stints at prestigious institutions and companies such as NASA, Bayer, and Becton Dickinson and Company, Sambadi has emerged as a thought leader in applying data science to complex ecological and agricultural systems.\nFrom his doctoral research at the University of Central Florida to practical applications in the industry, Sambadi has consistently focused on the intersection of data science and environmental stewardship. His work encompasses designing robust data pipelines, implementing advanced machine learning models, and generating actionable insights for sustainable agriculture, biodiversity conservation, and climate change mitigation.\nNotably, his contribution to the NASA DEVELOP program stands out, where he employed geospatial data for conservation efforts in Colorado’s Grand Valley region. His doctoral dissertation, an intricate study on the impacts of climate variables on oilseed sunflower yields, was materialized into “SunScope,” an open-source application aiding farmers and researchers across the nation.\nSambadi’s technical proficiency spans a range of tools and languages, including R, Python, GIS methodologies, and various machine learning algorithms and frameworks. He is not just a data scientist but also an educator, a mentor, and a continuous learner committed to pushing the boundaries of traditional research methods. His efforts have been recognized through numerous awards, publications, and speaking engagements.\nOn his GitHub, visitors can explore the repositories that reflect the depth and breadth of his work, showcasing real-world applications of data science in addressing some of the planet’s most pressing challenges.\nFor Sambadi, data is not just a series of numbers but a powerful storyteller capable of driving significant change. He is on a mission to leverage data for a more sustainable and food-secure future, demonstrating the transformative power of data science in ecological and environmental domains.\nConnect with Dr. Majumder to explore collaboration opportunities, share insights, or just to dive into fascinating discussions on data-driven ecology."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "SpatialDataChronicles",
-    "section": "",
-    "text": "Rivers of West Bengal Visualization\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nSundarban Shifts\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nChronoClimateHub: Visual Narratives of Earth’s Changes\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nVisualizing Patient Risk Profiles: An Interactive Exploration\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nYield Forecast of Sunflowers Using Machine Learning and Explainable AI\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nApplying XAI Approaches to Assess Intraspecific Trait Variation in Ecology\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nA Machine Learning Approach to Study Plant Functional Trait Divergence\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nAerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nNorth American Sunflower Species Distribution\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nExploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nDelving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 16, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nCreating YieldScapeUSA\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/post-with-code/2_post.html",
-    "href": "posts/post-with-code/2_post.html",
-    "title": "Delving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R",
-    "section": "",
-    "text": "&lt;!DOCTYPE html&gt;"
-  },
-  {
-    "objectID": "posts/post-with-code/4_post.html",
-    "href": "posts/post-with-code/4_post.html",
-    "title": "Visualizing Patient Risk Profiles: An Interactive Exploration",
-    "section": "",
-    "text": "&lt;!DOCTYPE html&gt;"
+    "text": "Introduction\nAerosol Odyssey is a captivating exploration of the Absorbing Aerosol Index (AAI) dynamics in New Delhi from November 2018 to August 2023. Utilizing interactive geospatial data visualizations, this project elucidates the atmospheric aerosol dynamics, aiding in the comprehension of environmental impacts and trends over the mentioned period.\n\n\nData Sources\n\nAbsorbing Aerosol Index (AAI) Data: Sourced from the European Union/ESA/Copernicus dataset stored within the Google Earth Engine data catalogue (COPERNICUS/S5P/NRTI/L3_AER_AI).\nShapefile for Delhi Boundaries: Acquired from Data Meet India community Data Meet India community under the Creative Commons License (CC BY 4.0).\n\n\n\nMethodology\nThe project encompasses a series of operations aimed at geospatial analysis and visualization utilizing various Python libraries along with Google Earth Engine (GEE). The primary focus is on extracting, processing, and visualizing geospatial data over a specified region and time frame. Notable functionalities include reading geometries from files, converting geometries to GEE format, filtering datasets based on geographical bounds and time, and visualizing and exporting monthly mean Earth Engine images using Folium maps.\n\nPreprocessing:\n\nGeometry Reading and Conversion: Loaded a specific geometry from a file and converted it to Earth Engine geometry using the provided shapefile for Delhi boundaries.\nDataset Filtering: Defined and filtered a dataset for a specific region and time period using the Google Earth Engine API.\n\nData Analysis and Visualization:\n\nMonthly Mean Calculation: Executed the monthly mean calculation for a specified time period and band, focusing on the Absorbing Aerosol Index.\nVisualization: Visualized and exported monthly mean images with specified parameters, enabling an interactive exploration of aerosol concentrations and their temporal variations in New Delhi’s atmosphere.\nTimelapse video: A timelapse video was made to visualize the variations in monthly aerosol index values\n\n\n\n\n\nTools and Libraries Used\n\nPython\nGoogle Earth Engine (GEE)\nLibraries: Rasterio, Pandas, Folium, Geopandas, Shapely.\n\n\n\nKey Insights\n\nThe project successfully unveils the temporal variations in aerosol concentrations over New Delhi’s atmosphere, providing valuable insights into environmental impacts and trends.\nThe interactive geospatial data visualizations offer a unique lens to observe and analyze aerosol dynamics in New Delhi, facilitating a deeper understanding of atmospheric aerosol behavior over time.\n\n\n\nConclusion\nThe methodology employed in this project seamlessly melds functionalities from various libraries and Google Earth Engine to execute geospatial analysis and visualization tasks. Through a series of defined functions and procedures, it manages to read geometries, convert them to a compatible format, filter datasets based on specified criteria, calculate monthly mean values, and visualize the results interactively. This well-organized project is a valuable asset for anyone looking to explore geospatial data analysis and visualization in Python.\n\n\nLinks\nThe code and the notebook for this porject can be found here:\n\nGitHub Repository\nColab Notebook"
   },
   {
     "objectID": "posts/post-with-code/6_post.html",
@@ -161,11 +70,361 @@
     "text": "7. Conclusions\nThe methodology presented herein furnishes a useful tool for investigating intraspecific functional trait divergence, especially in large datasets. It helps in predicting plant responses to environmental changes, shedding light on contrasting ecological strategies across different landscapes. The approach also holds potential for testing the applicability of interspecific paradigms at intraspecific scales."
   },
   {
+    "objectID": "posts/post-with-code/6_post.html#code",
+    "href": "posts/post-with-code/6_post.html#code",
+    "title": "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology",
+    "section": "8. Code",
+    "text": "8. Code\nThe code for this analysis can be accessible in the project GitHub repository"
+  },
+  {
     "objectID": "posts/post-with-code/6_post.html#application",
     "href": "posts/post-with-code/6_post.html#application",
     "title": "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology",
     "section": "9. Application",
     "text": "9. Application\n\nShiny App:\n\nThe Shiny app, accessible here, exhibits the main results of this study. The code for the app is available in the GitHub repo."
+  },
+  {
+    "objectID": "posts/post-with-code/6_post.html#reference",
+    "href": "posts/post-with-code/6_post.html#reference",
+    "title": "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology",
+    "section": "10. Reference",
+    "text": "10. Reference\nBercovich N, N Genze, M Todesco, GL Owens, J-S Légaré, K Huang, LH Rieseberg, DG Grimm 2022 HeliantHOME, a public and centralized database of phenotypic sunflower data. Sci Data 9: 735."
+  },
+  {
+    "objectID": "posts/post-with-code/4_post.html",
+    "href": "posts/post-with-code/4_post.html",
+    "title": "Visualizing Patient Risk Profiles: An Interactive Exploration",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "posts/post-with-code/2_post.html",
+    "href": "posts/post-with-code/2_post.html",
+    "title": "Delving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html",
+    "href": "posts/post-with-code/13_post.html",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "This project aims to analyze and visualize the changes in average yearly temperatures across different counties in the US from the year 1960 to 2022. The analysis is performed using R, focusing on spatial data handling, visualization, and data processing.\n\n\n\nncdf4: Aids in handling netCDF data.\nhere: Utilized for constructing file paths.\ntidyverse: Essential for data wrangling and visualization.\nterra: Handy for handling raster data.\nsf: Engaged for managing spatial data.\n\n\n\n\n\nTemperature Data: Acquired from NOAA Monthly U.S. Climate Gridded Dataset\n\nCitation: Vose, Russell S., et al. (2014): NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. [1960 and 2022]. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [11/4/2023].\n\nCounty Centroid Shapefile: Procured from National Weather Service\n\nCitation Information:\n\nOriginator: National Weather Service\nPublication Date: 1995\nTitle: Counties of U.S.\nGeospatial Data Presentation Form: vector digital data\nPublication Place: Silver Spring, MD\nPublisher: National Weather Service\nOnline Linkage: National Weather Service Geodata\n\n\n\n\n\n\n\n\n\nProcure the average temperature netCDF file from NOAA.\nDownload the US county centroid shapefile from the National Weather Service\n\n\n\n\n\nVerify and establish requisite directories for data storage and processing.\nDecompress the downloaded shapefile.\nLoad requisite R packages and source custom functions for data processing.\n\n\n\n\n\nExtract and export specific layers from the netCDF file for the years 1960 and 2022.\nRead in the county centroid shapefile and process it for ensuing use.\n\n\n\n\n\nExtract temperature values for each county for the years 1960 and 2022.\nCalculate the average temperature for each county for both years.\nCompute the temperature change for each county over the examined time span.\n\n\n\n\n\nCategorize temperature change into assorted ranges for enhanced visualization.\nPrepare a color palette and legend for the visualization.\n\n\n\n\n\nCreate a plot illustrating the temperature change across US counties.\nCustomize the plot with labels, legend, and title.\n\n\n\n\n\nStore the final plot to a file named Temperature.png.\n\n\n\n\n\nA visualization delineating the change in average temperatures across US counties from 1960 to 2022.\n\n\n\n\nCustom functions are deployed for particular tasks such as extracting and exporting layers from the netCDF file, extracting values from raster data at specified point locations, and processing the data for visualization.\n\n\n\nThe code for this analysis can be found in the project GitHub repository"
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#libraries-employed",
+    "href": "posts/post-with-code/13_post.html#libraries-employed",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "ncdf4: Aids in handling netCDF data.\nhere: Utilized for constructing file paths.\ntidyverse: Essential for data wrangling and visualization.\nterra: Handy for handling raster data.\nsf: Engaged for managing spatial data."
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#data-sources",
+    "href": "posts/post-with-code/13_post.html#data-sources",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "Temperature Data: Acquired from NOAA Monthly U.S. Climate Gridded Dataset\n\nCitation: Vose, Russell S., et al. (2014): NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. [1960 and 2022]. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [11/4/2023].\n\nCounty Centroid Shapefile: Procured from National Weather Service\n\nCitation Information:\n\nOriginator: National Weather Service\nPublication Date: 1995\nTitle: Counties of U.S.\nGeospatial Data Presentation Form: vector digital data\nPublication Place: Silver Spring, MD\nPublisher: National Weather Service\nOnline Linkage: National Weather Service Geodata"
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#workflow",
+    "href": "posts/post-with-code/13_post.html#workflow",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "Procure the average temperature netCDF file from NOAA.\nDownload the US county centroid shapefile from the National Weather Service\n\n\n\n\n\nVerify and establish requisite directories for data storage and processing.\nDecompress the downloaded shapefile.\nLoad requisite R packages and source custom functions for data processing.\n\n\n\n\n\nExtract and export specific layers from the netCDF file for the years 1960 and 2022.\nRead in the county centroid shapefile and process it for ensuing use.\n\n\n\n\n\nExtract temperature values for each county for the years 1960 and 2022.\nCalculate the average temperature for each county for both years.\nCompute the temperature change for each county over the examined time span.\n\n\n\n\n\nCategorize temperature change into assorted ranges for enhanced visualization.\nPrepare a color palette and legend for the visualization.\n\n\n\n\n\nCreate a plot illustrating the temperature change across US counties.\nCustomize the plot with labels, legend, and title.\n\n\n\n\n\nStore the final plot to a file named Temperature.png."
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#output",
+    "href": "posts/post-with-code/13_post.html#output",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "A visualization delineating the change in average temperatures across US counties from 1960 to 2022."
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#custom-functions",
+    "href": "posts/post-with-code/13_post.html#custom-functions",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "Custom functions are deployed for particular tasks such as extracting and exporting layers from the netCDF file, extracting values from raster data at specified point locations, and processing the data for visualization."
+  },
+  {
+    "objectID": "posts/post-with-code/13_post.html#code",
+    "href": "posts/post-with-code/13_post.html#code",
+    "title": "US Temperature Change Analysis (1960 - 2022)",
+    "section": "",
+    "text": "The code for this analysis can be found in the project GitHub repository"
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html",
+    "href": "posts/post-with-code/11_post.html",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "The “Sundarban Shifts” project is focused on monitoring vegetation alterations in the Sundarbans Mangroves, which span across Bangladesh and India. Utilizing the MOD13A2 dataset from MODIS, the endeavor aims to unravel the ecological dynamics in light of climate change, rising sea levels, and human activities. The analysis revolves around the Normalized Difference Vegetation Index (NDVI) to assess vegetation health over time. Leveraging Python libraries for data visualization, the project manifests an interactive geographical portrayal of NDVI variations, encapsulating the essence of this distinctive ecosystem and the urgency of informed conservation strategies.\n\n\n\nThe project employs data from the MODIS MOD13A2 dataset, credited to Kamel Didan - University of Arizona, Alfredo Huete - University of Technology Sydney and MODAPS SIPS - NASA (2015). The dataset provides NDVI values at 16-day intervals, which are aggregated annually for this analysis to discern vegetation health and changes over the years in the Sundarbans http://doi.org/10.5067/MODIS/MOD13A2.006.\n\n\n\nEssential libraries and tools utilized in this project include:\n\nrasterio: For reading and writing geospatial data.\nee: Google Earth Engine library for geospatial analysis.\nnumpy: For numerical operations.\npandas: For data manipulation and analysis.\nmatplotlib: For data visualization.\nPIL: Python Imaging Library for opening, manipulating, and saving image files.\nimageio: For reading and writing image data.\nosgeo: A set of python bindings for GDAL/OGR library.\nIPython.display: For displaying images.\n\n\n\n\n\nLibrary Loading:\n\nInstall rasterio and import the required libraries for script execution.\n\nAuthenticate Earth Engine:\n\nAuthenticate and initialize Google Earth Engine to access geospatial datasets.\n\nCalculate Yearly NDVI Values:\n\nDefine the region of interest as Sundarbans Mangroves.\nCreate a function to fetch MODIS NDVI data for a specific year.\nIterate through the years to calculate the mean NDVI for each year, exporting the results to TIFF images.\n\nDisplay a Few of The Plots:\n\nVisualize a subset of the generated NDVI images for selected years using Matplotlib.\n\nCreating the GIF:\n\nDefine a function to normalize array values.\nIterate through each year to read the NDVI images, normalize and apply a custom colormap, and add a year label to each image.\nCreate a GIF from the sequence of images to visualize the time-lapse of NDVI values.\n\nLabeling GIF:\n\nSimilar to the GIF creation step, but with added year labels to each image for better understanding of the time-lapse.\n\n\nSummary:\n\nThe script provides a systematic approach to compute and visualize the trend of vegetation change over the Sundarbans Mangroves region across a span of 24 years. The resulting GIF offers an engaging way to understand the dynamics of vegetation in the region over the years.\n\n\nThis project encapsulates a meticulous workflow from data extraction to visualization, rendering an engaging narrative of vegetation dynamics in the Sundarbans Mangroves. Through well-structured steps, it delivers an insightful glimpse into the changing vegetation health, underscoring the importance of informed conservation strategies in this ecologically significant region.\n\n\n\nThe code for this project can be found in the GitHub repository and the Colab Notebook"
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html#introduction",
+    "href": "posts/post-with-code/11_post.html#introduction",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "The “Sundarban Shifts” project is focused on monitoring vegetation alterations in the Sundarbans Mangroves, which span across Bangladesh and India. Utilizing the MOD13A2 dataset from MODIS, the endeavor aims to unravel the ecological dynamics in light of climate change, rising sea levels, and human activities. The analysis revolves around the Normalized Difference Vegetation Index (NDVI) to assess vegetation health over time. Leveraging Python libraries for data visualization, the project manifests an interactive geographical portrayal of NDVI variations, encapsulating the essence of this distinctive ecosystem and the urgency of informed conservation strategies."
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html#data-citation",
+    "href": "posts/post-with-code/11_post.html#data-citation",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "The project employs data from the MODIS MOD13A2 dataset, credited to Kamel Didan - University of Arizona, Alfredo Huete - University of Technology Sydney and MODAPS SIPS - NASA (2015). The dataset provides NDVI values at 16-day intervals, which are aggregated annually for this analysis to discern vegetation health and changes over the years in the Sundarbans http://doi.org/10.5067/MODIS/MOD13A2.006."
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html#libraries-and-tools",
+    "href": "posts/post-with-code/11_post.html#libraries-and-tools",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "Essential libraries and tools utilized in this project include:\n\nrasterio: For reading and writing geospatial data.\nee: Google Earth Engine library for geospatial analysis.\nnumpy: For numerical operations.\npandas: For data manipulation and analysis.\nmatplotlib: For data visualization.\nPIL: Python Imaging Library for opening, manipulating, and saving image files.\nimageio: For reading and writing image data.\nosgeo: A set of python bindings for GDAL/OGR library.\nIPython.display: For displaying images."
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html#workflow",
+    "href": "posts/post-with-code/11_post.html#workflow",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "Library Loading:\n\nInstall rasterio and import the required libraries for script execution.\n\nAuthenticate Earth Engine:\n\nAuthenticate and initialize Google Earth Engine to access geospatial datasets.\n\nCalculate Yearly NDVI Values:\n\nDefine the region of interest as Sundarbans Mangroves.\nCreate a function to fetch MODIS NDVI data for a specific year.\nIterate through the years to calculate the mean NDVI for each year, exporting the results to TIFF images.\n\nDisplay a Few of The Plots:\n\nVisualize a subset of the generated NDVI images for selected years using Matplotlib.\n\nCreating the GIF:\n\nDefine a function to normalize array values.\nIterate through each year to read the NDVI images, normalize and apply a custom colormap, and add a year label to each image.\nCreate a GIF from the sequence of images to visualize the time-lapse of NDVI values.\n\nLabeling GIF:\n\nSimilar to the GIF creation step, but with added year labels to each image for better understanding of the time-lapse.\n\n\nSummary:\n\nThe script provides a systematic approach to compute and visualize the trend of vegetation change over the Sundarbans Mangroves region across a span of 24 years. The resulting GIF offers an engaging way to understand the dynamics of vegetation in the region over the years.\n\n\nThis project encapsulates a meticulous workflow from data extraction to visualization, rendering an engaging narrative of vegetation dynamics in the Sundarbans Mangroves. Through well-structured steps, it delivers an insightful glimpse into the changing vegetation health, underscoring the importance of informed conservation strategies in this ecologically significant region."
+  },
+  {
+    "objectID": "posts/post-with-code/11_post.html#code",
+    "href": "posts/post-with-code/11_post.html#code",
+    "title": "Sundarban Shifts",
+    "section": "",
+    "text": "The code for this project can be found in the GitHub repository and the Colab Notebook"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SpatialDataChronicles",
+    "section": "",
+    "text": "Rivers of West Bengal Visualization\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nSundarban Shifts\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nChronoClimateHub: Visual Narratives of Earth’s Changes\n\n\n\n\n\n\n\nDashboards\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nUS Temperature Change Analysis (1960 - 2022)\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nVisualizing Patient Risk Profiles: An Interactive Exploration\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nYield Forecast of Sunflowers Using Machine Learning and Explainable AI\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nApplying XAI Approaches to Assess Intraspecific Trait Variation in Ecology\n\n\n\n\n\n\n\nML Projects\n\n\nDashboards\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nA Machine Learning Approach to Study Plant Functional Trait Divergence\n\n\n\n\n\n\n\nML Projects\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nAerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nNorth American Sunflower Species Distribution\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 23, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nExploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nDelving into the contiguous US Temperature Trends: Visualizing publicly available NetCDF data using R\n\n\n\n\n\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 16, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nCreating YieldScapeUSA\n\n\n\n\n\n\n\nApplications\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nSambadi Majumder, PhD\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sambadi Majumder, PhD - Geospatial Data Scientist",
+    "section": "",
+    "text": "Sambadi Majumder, PhD - Geospatial Data Scientist\nDr. Sambadi Majumder is a seasoned Data Scientist with a rich background in ecology, agronomy, and biology, currently based in South Royalton, Vermont. With a career marked by stints at prestigious institutions and companies such as NASA, Bayer, and Becton Dickinson and Company, Sambadi is adept in applying data science to complex ecological and agricultural systems.\nFrom his doctoral research at the University of Central Florida to practical applications in the industry, Sambadi has consistently focused on the intersection of data science and environmental stewardship. His work encompasses designing robust data pipelines, implementing advanced machine learning models, and generating actionable insights for sustainable agriculture, biodiversity conservation, and climate change mitigation.\nNotably, his contribution to the NASA DEVELOP program stands out, where he employed geospatial data for conservation efforts in Colorado’s Grand Valley region. His doctoral dissertation, an intricate study on the impacts of climate variables on oilseed sunflower yields, was materialized into “SunScope,” an open-source application aiding farmers and researchers across the nation.\nSambadi’s technical proficiency spans a range of tools and languages, including R, Python, GIS methodologies, and various machine learning algorithms and frameworks. He is not just a data scientist but also an educator, a mentor, and a continuous learner committed to pushing the boundaries of traditional research methods.\nOn his GitHub, visitors can explore the repositories that reflect the depth and breadth of his work, showcasing real-world climate-change oriented applications of data science.\nFor Sambadi, data is not just a series of numbers but a powerful storyteller capable of driving significant change. He is on a mission to leverage data for a more sustainable and food-secure future, demonstrating the transformative power of data science in ecological and environmental domains.\nConnect with Dr. Majumder to explore collaboration opportunities, share insights, or just to dive into fascinating discussions on data-driven ecology."
+  },
+  {
+    "objectID": "posts/post-with-code/10_post.html",
+    "href": "posts/post-with-code/10_post.html",
+    "title": "Rivers of West Bengal Visualization",
+    "section": "",
+    "text": "This project generates a visualization of the rivers in West Bengal, India, using geospatial data. The representation showcases the rivers with varying widths based on their order of flow, utilizing the ggplot2 library for rendering."
+  },
+  {
+    "objectID": "posts/post-with-code/10_post.html#data-sources",
+    "href": "posts/post-with-code/10_post.html#data-sources",
+    "title": "Rivers of West Bengal Visualization",
+    "section": "Data Sources",
+    "text": "Data Sources\n\nWest Bengal Shapefile: india-village-census-2001-WB.shp\nCitation: Village-Level Geospatial Socio-Economic Data for the state of West Bengal, India, 2001 [map]. No Scale Provided. Retrieved November 03, 2023, from Source\nAsian Rivers Dataset (HydroSHEDS database): HydroRIVERS_v10_as.shp\nCitation: Lehner, B., & Grill, G. (2013). [Map of Global River Hydrography]. Hydrological Processes, 27(15): 2171–2186. Source"
+  },
+  {
+    "objectID": "posts/post-with-code/10_post.html#libraries-used",
+    "href": "posts/post-with-code/10_post.html#libraries-used",
+    "title": "Rivers of West Bengal Visualization",
+    "section": "Libraries used",
+    "text": "Libraries used\n\nhere\ntidyverse\nraster\nggplot2\nsf"
+  },
+  {
+    "objectID": "posts/post-with-code/10_post.html#workflow-description",
+    "href": "posts/post-with-code/10_post.html#workflow-description",
+    "title": "Rivers of West Bengal Visualization",
+    "section": "Workflow Description",
+    "text": "Workflow Description\n\nLibrary Loading:\n\nLoads the required libraries such as here, tidyverse, raster, ggplot2, and sf for data handling and visualization.\n\nShapefile Loading:\n\nReads the West Bengal shapefile which contains the geographical boundaries of West Bengal, and selects only the geometry column for further use.\nTransforms the coordinate system of the West Bengal shapefile to EPSG:4326 (WGS 84) for consistency in geographical representation.\n\nRiver Data Loading:\n\nReads the Asian Rivers dataset which contains the geometry and order of flow information of rivers.\nSelects only the ORD_FLOW and geometry columns from the dataset for further use.\n\nSpatial Intersection:\n\nPerforms a spatial intersection to filter out the rivers that are within the boundaries of West Bengal.\n\nRiver Width Rescaling:\n\nRescales the ORD_FLOW values to a new width variable, which is used to represent the width of rivers in the visualization.\nConverts the ORD_FLOW variable to a factor variable for color mapping in the visualization.\n\nVisualization Preparation:\n\nCreates a ggplot object with specified aesthetic mappings for color, size, and alpha (transparency) based on the order of flow of the rivers.\nSets custom scales for color, size, and alpha to ensure a proper visual representation of river widths and order of flow.\nApplies a theme to the plot for a cleaner and more visually appealing appearance.\n\nTitle and Citation:\n\nAdds a title to the plot to indicate the geographical focus (Rivers of West Bengal).\nAdds a caption to cite the data source of the river data.\n\nSaving the Plot:\n\nSaves the generated plot to a PNG file named WestBengal_Rivers.png with specified dimensions and resolution.\n\n\nThe script essentially loads necessary libraries and datasets, processes the geospatial data to filter and rescale river information, prepares and generates a visualization, and finally saves the visualization to a PNG file."
+  },
+  {
+    "objectID": "posts/post-with-code/10_post.html#code",
+    "href": "posts/post-with-code/10_post.html#code",
+    "title": "Rivers of West Bengal Visualization",
+    "section": "Code:",
+    "text": "Code:\nThe code for this project can be found in the GitHub repository"
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html",
+    "href": "posts/post-with-code/12_post.html",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "",
+    "text": "ChronoClimateHub serves as a compelling portal where time unfolds the narrative of Earth’s remarkable transformations. Through a series of mesmerizing timelapse videos, viewers can witness significant shifts in climate, biodiversity, and ecological landscapes across different global regions.\n\n\n\n\nThermoPrecipTrends: A journey through temperature and SPEI fluctuations in the contiguous US from 1960 to September 2023.\nSundarbanShifts: Explore the NDVI evolution from 2000 to 2023 within the Sundarbans, the majestic world’s largest mangrove forest.\nAerosolOdyssey: Uncover the absorbing aerosol index variations in New Delhi from November 2018 to August 2023, revealing atmospheric aerosol dynamics.\nSO2Saga: Delve into the sulfur dioxide emission patterns over Staten Island, New York from November 2018 to August 2023, showcasing the interplay of natural and anthropogenic emissions.\n\nAdditional chronicles are in the pipeline to further enrich the narrative of Earth’s changes.\nExplore the app\n\n\n\n\nTemperature and SPEI Data:\n\nTemperature Data Citation: Vose, R. S., Applequist, S., Squires, M., Durre, I., Menne, M. J., Williams, C. N. Jr., Fenimore, C., Gleason, K., & Arndt, D. (2014). NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [9/25/2023].\nSPEI Data: Sourced from the National Drought Mitigation Center.\n\nNDVI Data:\n\nCitation: Didan, K. (2021). MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center. https://doi.org/10.5067/MODIS/MOD13A2.061\n\nAerosol Data:\n\nData comprises the Absorbing Aerosol Index (AAI) pivotal for detecting absorbing aerosol particles in the atmosphere from COPERNICUS/S5P/NRTI/L3_AER_AI.\n\nSO2 Data:\n\nInsights into sulfur dioxide emissions, sourced from the TROPOMI instrument on board the Sentinel-5P satellite, reveal both natural and anthropogenic sources from Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#introduction",
+    "href": "posts/post-with-code/12_post.html#introduction",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "",
+    "text": "ChronoClimateHub serves as a compelling portal where time unfolds the narrative of Earth’s remarkable transformations. Through a series of mesmerizing timelapse videos, viewers can witness significant shifts in climate, biodiversity, and ecological landscapes across different global regions."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#featured-timelapse-chronicles-planetpulse",
+    "href": "posts/post-with-code/12_post.html#featured-timelapse-chronicles-planetpulse",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "",
+    "text": "ThermoPrecipTrends: A journey through temperature and SPEI fluctuations in the contiguous US from 1960 to September 2023.\nSundarbanShifts: Explore the NDVI evolution from 2000 to 2023 within the Sundarbans, the majestic world’s largest mangrove forest.\nAerosolOdyssey: Uncover the absorbing aerosol index variations in New Delhi from November 2018 to August 2023, revealing atmospheric aerosol dynamics.\nSO2Saga: Delve into the sulfur dioxide emission patterns over Staten Island, New York from November 2018 to August 2023, showcasing the interplay of natural and anthropogenic emissions.\n\nAdditional chronicles are in the pipeline to further enrich the narrative of Earth’s changes.\nExplore the app"
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#data-sources",
+    "href": "posts/post-with-code/12_post.html#data-sources",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "",
+    "text": "Temperature and SPEI Data:\n\nTemperature Data Citation: Vose, R. S., Applequist, S., Squires, M., Durre, I., Menne, M. J., Williams, C. N. Jr., Fenimore, C., Gleason, K., & Arndt, D. (2014). NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [9/25/2023].\nSPEI Data: Sourced from the National Drought Mitigation Center.\n\nNDVI Data:\n\nCitation: Didan, K. (2021). MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center. https://doi.org/10.5067/MODIS/MOD13A2.061\n\nAerosol Data:\n\nData comprises the Absorbing Aerosol Index (AAI) pivotal for detecting absorbing aerosol particles in the atmosphere from COPERNICUS/S5P/NRTI/L3_AER_AI.\n\nSO2 Data:\n\nInsights into sulfur dioxide emissions, sourced from the TROPOMI instrument on board the Sentinel-5P satellite, reveal both natural and anthropogenic sources from Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#core-functionality",
+    "href": "posts/post-with-code/12_post.html#core-functionality",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "Core Functionality",
+    "text": "Core Functionality\nChronoClimateHub is built using Streamlit which provides a dynamic and interactive platform for showcasing timelapse videos. Here’s a brief overview of the workflow based on the provided code snippets for different segments of the platform:\n\n1. Page Configuration:\n\nTitle and icon are set for the web page using st.set_page_config.\n\n\n\n2. Sidebar & Main Content Area:\n\nSidebar contains a success message guiding users to ‘Timelapse Videos’.\nA markdown formatted welcome message is displayed on the main content area with basic instructions for navigation.\n\n\n\n3. Video Display:\n\nThe page is divided into two columns using st.columns.\nTimelapse videos are displayed side by side in these columns, each accompanied by a caption.\n\n\n\n4. Data Source Information:\n\nA subheader is created using st.subheader to segregate the data source section.\nInformation about the data sources, including direct links to the datasets, are provided in markdown and text formats.\n\n\n\n5. Data Processing and Calculation:\n\nAnother subheader segregates the data processing section.\nDetails about data acquisition, cleaning, processing, and used libraries are provided.\n\nEach section of the workflow corresponds to a specific feature or functionality within the ChronoClimateHub platform. The sidebar, video display, data source information, and data processing details are presented in a structured and user-friendly manner, making the platform intuitive and informative."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#libraries-and-tools",
+    "href": "posts/post-with-code/12_post.html#libraries-and-tools",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "Libraries and Tools 🛠️",
+    "text": "Libraries and Tools 🛠️\nThe workflow utilizes various Python libraries to handle data and display the content. Key libraries include: - streamlit: For creating the web app and displaying content. - pandas: For data manipulation. - folium: For map rendering. - geopandas: For handling geometric data. - shapely: For manipulation and analysis of planar geometric objects. - ee: For accessing Google Earth Engine data. - rasterio: For reading and writing geospatial raster data (e.g., GeoTIFF). - os: For interacting with the operating system.\nAdditionally, R libraries like progress, transformr, gganimate, raster, ncdf4, and the tidyverse suite of packages are used for data processing, visualization, and animation in the Temperature and SPEI segments of the project."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#streamlit-app-deployment",
+    "href": "posts/post-with-code/12_post.html#streamlit-app-deployment",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "Streamlit App Deployment 🌐",
+    "text": "Streamlit App Deployment 🌐\nThe Streamlit app is hosted online, providing a user-friendly interface for interacting with the visual narratives of Earth’s changes. The st.set_page_config, st.write, st.markdown, st.video, and st.columns functions, among others, are used extensively to structure the content, display the videos, and create an engaging user experience. The sidebar and main content area are organized to provide a straightforward navigation structure, enabling users to easily explore the timelapse chronicles and understand the underlying data and processing steps.\nThrough a combination of Streamlit’s interactive features and Python’s powerful data processing libraries, ChronoClimateHub offers a captivating platform to visualize and explore the profound transformations our planet is undergoing."
+  },
+  {
+    "objectID": "posts/post-with-code/12_post.html#code",
+    "href": "posts/post-with-code/12_post.html#code",
+    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
+    "section": "Code",
+    "text": "Code\nThe code for this project can be found here"
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html",
+    "href": "posts/post-with-code/1_post.html",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "YieldScapeUSA serves as a potent interactive visualization tool aimed at illustrating the agricultural yield data across the United States. Initially, the tool was conceptualized to exhibit oilseed sunflower yield data across select counties in North Dakota, South Dakota, and Minnesota. However, with advancements, it now accommodates users to upload and visualize their distinct yield data across varied crops and regions.\n\n\n\n\nThe application is conveniently deployed on ShinyApps.io, ensuring easy access and interaction. - YieldScapeUSA app\n\n\n\nThe tool boasts an array of features tailored to enhance user engagement and data analysis:\n\nInteractive Map: A dynamic map enabling exploration of yield data across different geographical regions.\nCustom Data Upload: Users can upload their own RDS data file to visualize yield statistics for diverse crops and locations.\nDynamic Selections: The tool allows geometry, time, administrative, and value columns selection from the data to suit analysis needs.\nDynamic Time Slider: A time slider to view yield data for specific years, dynamically changing based on the data.\nColor-Coded Yield Values: The yield values are color-coded to distinguish between high and low yield areas visually, employing Choropleth maps.\nDetailed Hover Information: Hovering over a region displays detailed yield information, including state and county names alongside yield values.\nAdministrative Level Analysis: Visualize average yield trends over time with line plots, faceted by the first level of administrative division.\nAdmin 2 Level Analysis: Explore the top 5 counties in terms of total yield with bar plots, faceted by the first level of administrative division.\nCustomizable Color Palette: Users can choose different color palettes for the line and bar plots to suit visual preferences.\n\n\n\n\nThe app is engineered to visualize user-provided data, fostering a wide spectrum of agricultural yield data representation. This feature morphs the app into a flexible tool for scrutinizing yield trends across different crops and regions over time.\n\n\nThe app requires data in RDS format containing spatial information. The column expectations include:\n\nGeometry Column: Representing the spatial geometry of each data point.\nTime Column: Representing the time dimension (e.g., year) of the data.\nAdmin Columns: Representing the first and second levels of administrative division (e.g., State, County).\nValue Column: Representing the yield values or any other values to visualize.\n\n\n\n\n\nThe application leverages multiple technologies:\n\nR: The core programming language used for building the app.\nShiny: Employed for creating the interactive web application.\nLeaflet: Facilitates rendering the interactive map.\nsf: Utilized for handling spatial data.\n\n\n\n\nFuture versions of YieldScapeUSA aim to integrate:\n\nAdditional Built-in Data Sets: Yield data for other major crops to provide built-in datasets for users.\nEnhanced Filtering and Analytics: Advanced filtering options and analytics for deeper insights into yield trends.\n\n\n\n\nUsers can clone the repository to their local machine, set the working directory, install the required R packages, and run the app.R file in RStudio to launch the app locally.\n\n\n\nYieldScapeUSA stands as a robust platform for farmers, agricultural researchers, and policymakers to interact with and analyze agricultural yield data, aiding in informed decision-making and promoting sustainable farming practices.\nCheck out the code for the app"
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#overview",
+    "href": "posts/post-with-code/1_post.html#overview",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "YieldScapeUSA serves as a potent interactive visualization tool aimed at illustrating the agricultural yield data across the United States. Initially, the tool was conceptualized to exhibit oilseed sunflower yield data across select counties in North Dakota, South Dakota, and Minnesota. However, with advancements, it now accommodates users to upload and visualize their distinct yield data across varied crops and regions."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#deployment",
+    "href": "posts/post-with-code/1_post.html#deployment",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "The application is conveniently deployed on ShinyApps.io, ensuring easy access and interaction. - YieldScapeUSA app"
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#features",
+    "href": "posts/post-with-code/1_post.html#features",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "The tool boasts an array of features tailored to enhance user engagement and data analysis:\n\nInteractive Map: A dynamic map enabling exploration of yield data across different geographical regions.\nCustom Data Upload: Users can upload their own RDS data file to visualize yield statistics for diverse crops and locations.\nDynamic Selections: The tool allows geometry, time, administrative, and value columns selection from the data to suit analysis needs.\nDynamic Time Slider: A time slider to view yield data for specific years, dynamically changing based on the data.\nColor-Coded Yield Values: The yield values are color-coded to distinguish between high and low yield areas visually, employing Choropleth maps.\nDetailed Hover Information: Hovering over a region displays detailed yield information, including state and county names alongside yield values.\nAdministrative Level Analysis: Visualize average yield trends over time with line plots, faceted by the first level of administrative division.\nAdmin 2 Level Analysis: Explore the top 5 counties in terms of total yield with bar plots, faceted by the first level of administrative division.\nCustomizable Color Palette: Users can choose different color palettes for the line and bar plots to suit visual preferences."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#data",
+    "href": "posts/post-with-code/1_post.html#data",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "The app is engineered to visualize user-provided data, fostering a wide spectrum of agricultural yield data representation. This feature morphs the app into a flexible tool for scrutinizing yield trends across different crops and regions over time.\n\n\nThe app requires data in RDS format containing spatial information. The column expectations include:\n\nGeometry Column: Representing the spatial geometry of each data point.\nTime Column: Representing the time dimension (e.g., year) of the data.\nAdmin Columns: Representing the first and second levels of administrative division (e.g., State, County).\nValue Column: Representing the yield values or any other values to visualize."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#technologies",
+    "href": "posts/post-with-code/1_post.html#technologies",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "The application leverages multiple technologies:\n\nR: The core programming language used for building the app.\nShiny: Employed for creating the interactive web application.\nLeaflet: Facilitates rendering the interactive map.\nsf: Utilized for handling spatial data."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#future-expansions",
+    "href": "posts/post-with-code/1_post.html#future-expansions",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "Future versions of YieldScapeUSA aim to integrate:\n\nAdditional Built-in Data Sets: Yield data for other major crops to provide built-in datasets for users.\nEnhanced Filtering and Analytics: Advanced filtering options and analytics for deeper insights into yield trends."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#local-setup",
+    "href": "posts/post-with-code/1_post.html#local-setup",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "Users can clone the repository to their local machine, set the working directory, install the required R packages, and run the app.R file in RStudio to launch the app locally."
+  },
+  {
+    "objectID": "posts/post-with-code/1_post.html#conclusion",
+    "href": "posts/post-with-code/1_post.html#conclusion",
+    "title": "Creating YieldScapeUSA",
+    "section": "",
+    "text": "YieldScapeUSA stands as a robust platform for farmers, agricultural researchers, and policymakers to interact with and analyze agricultural yield data, aiding in informed decision-making and promoting sustainable farming practices.\nCheck out the code for the app"
+  },
+  {
+    "objectID": "posts/post-with-code/3_post.html",
+    "href": "posts/post-with-code/3_post.html",
+    "title": "Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html",
+    "href": "posts/post-with-code/5_post.html",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "",
+    "text": "Background:\n\nSunflower serves as a significant oilseed crop in the US, the yield of which is perceptibly affected by climate dynamics. The escalating adversities in global food production, exacerbated by climate change, underline the importance of precise crop yield forecasting. This project harnesses Explainable AI (XAI) and Machine Learning (ML) to discern the climate variables influencing sunflower yield at both national and regional scales, and to project future yields under varied emissions scenarios. This endeavor aims to facilitate better planning and management strategies by offering insights into key climate variables and their thresholds, thereby contributing to adaptive measures.\n\n\n\nImage by Dr. Chase Mason"
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#introduction",
+    "href": "posts/post-with-code/5_post.html#introduction",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "",
+    "text": "Background:\n\nSunflower serves as a significant oilseed crop in the US, the yield of which is perceptibly affected by climate dynamics. The escalating adversities in global food production, exacerbated by climate change, underline the importance of precise crop yield forecasting. This project harnesses Explainable AI (XAI) and Machine Learning (ML) to discern the climate variables influencing sunflower yield at both national and regional scales, and to project future yields under varied emissions scenarios. This endeavor aims to facilitate better planning and management strategies by offering insights into key climate variables and their thresholds, thereby contributing to adaptive measures.\n\n\n\nImage by Dr. Chase Mason"
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#problem-statement",
+    "href": "posts/post-with-code/5_post.html#problem-statement",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "2. Problem Statement",
+    "text": "2. Problem Statement\n\nThis study is committed to identifying the climate variables significantly impacting sunflower yield, and forecasting future yield per acre in the US under distinct emissions scenarios."
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#data",
+    "href": "posts/post-with-code/5_post.html#data",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "3. Data",
+    "text": "3. Data\n\nStudy Area and Data Sources:\n\nThe analysis encompasses data from 1976 to 2022, covering 192 counties across 7 states. The yield and weather data are programmatically acquired from USDA and NOAA databases using API keys, while future projections are sourced from the WorldClim repository utilizing CMIP6 models for the period 2021-2080.\n\nData Preparation:\n\nUtilizing R programming language, the data was compiled, cleaned, and processed. Extraction of data were performed at county centroids, with missing data elimination resulting in 177 counties. A split at 2004 was employed to create training and testing datasets, with state-level datasets generated for each state."
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#exploratory-data-analysis-eda",
+    "href": "posts/post-with-code/5_post.html#exploratory-data-analysis-eda",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "4. Exploratory Data Analysis (EDA)",
+    "text": "4. Exploratory Data Analysis (EDA)\n\nAverage yearly yield of oilseed sunflower from each of the 7 US states used in this study"
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#methodology",
+    "href": "posts/post-with-code/5_post.html#methodology",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "5. Methodology",
+    "text": "5. Methodology\n\nWorkflow:\n\nThe workflow, as depicted here, delineates the process of training and validating ML models on both national and state-level datasets. Recursive Feature Elimination (RFE) was employed to cherry-pick optimal predictors, with training datasets utilized to train RF, GBM, and XGB regression models. The predictive performance was evaluated employing normalized RMSE on testing datasets.\n\n\nSoftware and Programming Languages Used:\n\nThe R programming environment was instrumental for data cleaning, visualizations, and modeling."
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#main-results",
+    "href": "posts/post-with-code/5_post.html#main-results",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "6. Main Results",
+    "text": "6. Main Results\n\nImportant Predictors:\n\nRecursive feature elimination with a random forest algorithm to identify the most important predictors for yield at the national level. The predictors were ranked based on their relative importance in predicting yield using the mean decrease of root mean square error metric.\n\n\nThreshold Analysis:\n\nThe impact of four important predictors (total precipitation in July, maximum July temperature, minimum May temperature, and minimum September temperature) on yield. Accumulated Local Effects (ALE) were calculated for these predictors using both training and test datasets. The ALE plots illustrate how changes in predictor values affect yield (measured in lbs/acre).\n\n\nModel Performance:\n\nThe predictive performance of the best models at the national and state levels was evaluated using Pearson’s correlation (r) between predicted and actual values on the testing dataset. The trend of the relationship between predicted and actual values was visualized using a locally estimated scatterplot smoothing line with a 95% confidence interval. The analysis showed that the national model, based on the Random Forest regressor, performed better than state-level models in North Dakota and South Dakota, but state-level models outperformed the national model in the other states. The best state-level models for Colorado, Kansas, and Minnesota also used the Random Forest regressor, while the Gradient Boosting Machine regressor was used for Nebraska and Texas.\n\n\nFuture Yield Forecasts at the National Level:\n\nAverage yield forecasts at the national level were analyzed for three time periods and under different Socio-Economic Pathways (SSP). The average annual yield for 2022 was approximately 1940 lbs/acre, with error bars representing the standard deviation around this mean. Future yield forecasts were depicted as point estimates with error bars indicating variation (standard error), and lines illustrated yield changes across four time periods and under three SSPs. The SSPs included SSP 126 (“sustainable future”), SSP 245 (“middle of the road”), SSP 375 (“regional rivalry”), and SSP 585 (fossil-fueled development). Each SSP was characterized by specific factors such as global temperature rise, carbon dioxide emissions, economic growth, inequality, and environmental concerns.\n\n\n\n\n\nFuture Yield Forecasts at the State Level:\nAverage yield forecasts for each of the seven states were examined for three time periods and under different Socio-Economic Pathways (SSP). The latest average annual yield was represented by point estimates, with error bars indicating the standard deviation around the mean. Future yield forecasts were also depicted as point estimates with error bars reflecting the variation (standard error) around these predictions. The lines portrayed yield changes across the time periods and under four SSPs: SSP 126 (“sustainable future”), SSP 245 (“middle of the road”), SSP 375 (“regional rivalry”), and SSP 585 (fossil-fueled development). Each SSP was characterized by specific factors such as global temperature rise, carbon dioxide emissions, economic growth, inequality, and environmental concerns."
+  },
+  {
+    "objectID": "posts/post-with-code/5_post.html#application",
+    "href": "posts/post-with-code/5_post.html#application",
+    "title": "Yield Forecast of Sunflowers Using Machine Learning and Explainable AI",
+    "section": "7. Application",
+    "text": "7. Application\n\nShiny App:\n\nThe Shiny app, accessible here, exhibits the main results of this study. The code for the app is available in the GitHub."
   },
   {
     "objectID": "posts/post-with-code/7_post.html",
@@ -245,27 +504,6 @@
     "text": "10. References\n\nMason, C. M., and L. A. Donovan. 2015. Evolution of the leaf economics spectrum in herbs: Evidence from environmental divergences in leaf physiology across Helianthus (Asteraceae). Evolution 69: 2705-2720\nMason, C. M., and L. A. Donovan. 2015. Evolution of the Leaf Economics Spectrum in Herbs: Evidence from Environmental Divergences in Leaf Physiology across Helianthus (Asteraceae). Evolution 69: 2705–20.\nMason, C. M., A.W.Bowsher, B.L.Crowell, R.M. Celoy, C-J Tsai, L.A.Donovan.2016. Macroevolution of Leaf Defenses and Secondary Metabolites across the Genus Helianthus.New Phytologist 209: 1720–33\nMason, C. M., E. W. Goolsby, K.E. Davies, D.V. Bullock, L.A. Donovan. 2017. Importance of Whole-Plant Biomass Allocation and Reproductive Timing to Habitat Differentiation across the North American Sunflowers. Annals of Botany 119: 1131–42.\nMason, C. M., H. S. Patel, K. E. Davis, and L. A. Donovan. 2017b. Beyond Pollinators: Evolution of Floral Architecture with Environment across the Wild Sunflowers (Helianthus, Asteraceae). Plant Ecology and Evolution 150: 139–50.\nWestoby, M. 1998. A leaf-height-seed (LHS) plant ecology strategy scheme. Plant and Soil 199: 213–227."
   },
   {
-    "objectID": "posts/post-with-code/6_post.html#code",
-    "href": "posts/post-with-code/6_post.html#code",
-    "title": "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology",
-    "section": "8. Code",
-    "text": "8. Code\nThe code for this analysis can be accessible in the project GitHub repository"
-  },
-  {
-    "objectID": "posts/post-with-code/6_post.html#reference",
-    "href": "posts/post-with-code/6_post.html#reference",
-    "title": "Applying XAI Approaches to Assess Intraspecific Trait Variation in Ecology",
-    "section": "10. Reference",
-    "text": "10. Reference\nBercovich N, N Genze, M Todesco, GL Owens, J-S Légaré, K Huang, LH Rieseberg, DG Grimm 2022 HeliantHOME, a public and centralized database of phenotypic sunflower data. Sci Data 9: 735."
-  },
-  {
-    "objectID": "posts/post-with-code/8_post.html",
-    "href": "posts/post-with-code/8_post.html",
-    "title": "Aerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi",
-    "section": "",
-    "text": "Introduction\nAerosol Odyssey is a captivating exploration of the Absorbing Aerosol Index (AAI) dynamics in New Delhi from November 2018 to August 2023. Utilizing interactive geospatial data visualizations, this project elucidates the atmospheric aerosol dynamics, aiding in the comprehension of environmental impacts and trends over the mentioned period.\n\n\nData Sources\n\nAbsorbing Aerosol Index (AAI) Data: Sourced from the European Union/ESA/Copernicus dataset stored within the Google Earth Engine data catalogue (COPERNICUS/S5P/NRTI/L3_AER_AI).\nShapefile for Delhi Boundaries: Acquired from Data Meet India community Data Meet India community under the Creative Commons License (CC BY 4.0).\n\n\n\nMethodology\nThe project encompasses a series of operations aimed at geospatial analysis and visualization utilizing various Python libraries along with Google Earth Engine (GEE). The primary focus is on extracting, processing, and visualizing geospatial data over a specified region and time frame. Notable functionalities include reading geometries from files, converting geometries to GEE format, filtering datasets based on geographical bounds and time, and visualizing and exporting monthly mean Earth Engine images using Folium maps.\n\nPreprocessing:\n\nGeometry Reading and Conversion: Loaded a specific geometry from a file and converted it to Earth Engine geometry using the provided shapefile for Delhi boundaries.\nDataset Filtering: Defined and filtered a dataset for a specific region and time period using the Google Earth Engine API.\n\nData Analysis and Visualization:\n\nMonthly Mean Calculation: Executed the monthly mean calculation for a specified time period and band, focusing on the Absorbing Aerosol Index.\nVisualization: Visualized and exported monthly mean images with specified parameters, enabling an interactive exploration of aerosol concentrations and their temporal variations in New Delhi’s atmosphere.\nTimelapse video: A timelapse video was made to visualize the variations in monthly aerosol index values\n\n\n\n\n\nTools and Libraries Used\n\nPython\nGoogle Earth Engine (GEE)\nLibraries: Rasterio, Pandas, Folium, Geopandas, Shapely.\n\n\n\nKey Insights\n\nThe project successfully unveils the temporal variations in aerosol concentrations over New Delhi’s atmosphere, providing valuable insights into environmental impacts and trends.\nThe interactive geospatial data visualizations offer a unique lens to observe and analyze aerosol dynamics in New Delhi, facilitating a deeper understanding of atmospheric aerosol behavior over time.\n\n\n\nConclusion\nThe methodology employed in this project seamlessly melds functionalities from various libraries and Google Earth Engine to execute geospatial analysis and visualization tasks. Through a series of defined functions and procedures, it manages to read geometries, convert them to a compatible format, filter datasets based on specified criteria, calculate monthly mean values, and visualize the results interactively. This well-organized project is a valuable asset for anyone looking to explore geospatial data analysis and visualization in Python.\n\n\nLinks\nThe code and the notebook for this porject can be found here:\n\nGitHub Repository\nColab Notebook"
-  },
-  {
     "objectID": "posts/post-with-code/9_post.html",
     "href": "posts/post-with-code/9_post.html",
     "title": "North American Sunflower Species Distribution",
@@ -299,131 +537,5 @@
     "title": "North American Sunflower Species Distribution",
     "section": "",
     "text": "A visualization showing the distribution of selected sunflower species across North American ecoregions.\n\n\n\n\nThe code for this project can be found here:\n\nGitHub repository"
-  },
-  {
-    "objectID": "posts/post-with-code/10_post.html",
-    "href": "posts/post-with-code/10_post.html",
-    "title": "Rivers of West Bengal Visualization",
-    "section": "",
-    "text": "This project generates a visualization of the rivers in West Bengal, India, using geospatial data. The representation showcases the rivers with varying widths based on their order of flow, utilizing the ggplot2 library for rendering."
-  },
-  {
-    "objectID": "posts/post-with-code/10_post.html#data-sources",
-    "href": "posts/post-with-code/10_post.html#data-sources",
-    "title": "Rivers of West Bengal Visualization",
-    "section": "Data Sources",
-    "text": "Data Sources\n\nWest Bengal Shapefile: india-village-census-2001-WB.shp\nCitation: Village-Level Geospatial Socio-Economic Data for the state of West Bengal, India, 2001 [map]. No Scale Provided. Retrieved November 03, 2023, from Source\nAsian Rivers Dataset (HydroSHEDS database): HydroRIVERS_v10_as.shp\nCitation: Lehner, B., & Grill, G. (2013). [Map of Global River Hydrography]. Hydrological Processes, 27(15): 2171–2186. Source"
-  },
-  {
-    "objectID": "posts/post-with-code/10_post.html#libraries-used",
-    "href": "posts/post-with-code/10_post.html#libraries-used",
-    "title": "Rivers of West Bengal Visualization",
-    "section": "Libraries used",
-    "text": "Libraries used\n\nhere\ntidyverse\nraster\nggplot2\nsf"
-  },
-  {
-    "objectID": "posts/post-with-code/10_post.html#workflow-description",
-    "href": "posts/post-with-code/10_post.html#workflow-description",
-    "title": "Rivers of West Bengal Visualization",
-    "section": "Workflow Description",
-    "text": "Workflow Description\n\nLibrary Loading:\n\nLoads the required libraries such as here, tidyverse, raster, ggplot2, and sf for data handling and visualization.\n\nShapefile Loading:\n\nReads the West Bengal shapefile which contains the geographical boundaries of West Bengal, and selects only the geometry column for further use.\nTransforms the coordinate system of the West Bengal shapefile to EPSG:4326 (WGS 84) for consistency in geographical representation.\n\nRiver Data Loading:\n\nReads the Asian Rivers dataset which contains the geometry and order of flow information of rivers.\nSelects only the ORD_FLOW and geometry columns from the dataset for further use.\n\nSpatial Intersection:\n\nPerforms a spatial intersection to filter out the rivers that are within the boundaries of West Bengal.\n\nRiver Width Rescaling:\n\nRescales the ORD_FLOW values to a new width variable, which is used to represent the width of rivers in the visualization.\nConverts the ORD_FLOW variable to a factor variable for color mapping in the visualization.\n\nVisualization Preparation:\n\nCreates a ggplot object with specified aesthetic mappings for color, size, and alpha (transparency) based on the order of flow of the rivers.\nSets custom scales for color, size, and alpha to ensure a proper visual representation of river widths and order of flow.\nApplies a theme to the plot for a cleaner and more visually appealing appearance.\n\nTitle and Citation:\n\nAdds a title to the plot to indicate the geographical focus (Rivers of West Bengal).\nAdds a caption to cite the data source of the river data.\n\nSaving the Plot:\n\nSaves the generated plot to a PNG file named WestBengal_Rivers.png with specified dimensions and resolution.\n\n\nThe script essentially loads necessary libraries and datasets, processes the geospatial data to filter and rescale river information, prepares and generates a visualization, and finally saves the visualization to a PNG file."
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html",
-    "href": "posts/post-with-code/11_post.html",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "The “Sundarban Shifts” project is focused on monitoring vegetation alterations in the Sundarbans Mangroves, which span across Bangladesh and India. Utilizing the MOD13A2 dataset from MODIS, the endeavor aims to unravel the ecological dynamics in light of climate change, rising sea levels, and human activities. The analysis revolves around the Normalized Difference Vegetation Index (NDVI) to assess vegetation health over time. Leveraging Python libraries for data visualization, the project manifests an interactive geographical portrayal of NDVI variations, encapsulating the essence of this distinctive ecosystem and the urgency of informed conservation strategies.\n\n\n\nThe project employs data from the MODIS MOD13A2 dataset, credited to Kamel Didan - University of Arizona, Alfredo Huete - University of Technology Sydney and MODAPS SIPS - NASA (2015). The dataset provides NDVI values at 16-day intervals, which are aggregated annually for this analysis to discern vegetation health and changes over the years in the Sundarbans http://doi.org/10.5067/MODIS/MOD13A2.006.\n\n\n\nEssential libraries and tools utilized in this project include:\n\nrasterio: For reading and writing geospatial data.\nee: Google Earth Engine library for geospatial analysis.\nnumpy: For numerical operations.\npandas: For data manipulation and analysis.\nmatplotlib: For data visualization.\nPIL: Python Imaging Library for opening, manipulating, and saving image files.\nimageio: For reading and writing image data.\nosgeo: A set of python bindings for GDAL/OGR library.\nIPython.display: For displaying images.\n\n\n\n\n\nLibrary Loading:\n\nInstall rasterio and import the required libraries for script execution.\n\nAuthenticate Earth Engine:\n\nAuthenticate and initialize Google Earth Engine to access geospatial datasets.\n\nCalculate Yearly NDVI Values:\n\nDefine the region of interest as Sundarbans Mangroves.\nCreate a function to fetch MODIS NDVI data for a specific year.\nIterate through the years to calculate the mean NDVI for each year, exporting the results to TIFF images.\n\nDisplay a Few of The Plots:\n\nVisualize a subset of the generated NDVI images for selected years using Matplotlib.\n\nCreating the GIF:\n\nDefine a function to normalize array values.\nIterate through each year to read the NDVI images, normalize and apply a custom colormap, and add a year label to each image.\nCreate a GIF from the sequence of images to visualize the time-lapse of NDVI values.\n\nLabeling GIF:\n\nSimilar to the GIF creation step, but with added year labels to each image for better understanding of the time-lapse.\n\n\nSummary:\n\nThe script provides a systematic approach to compute and visualize the trend of vegetation change over the Sundarbans Mangroves region across a span of 24 years. The resulting GIF offers an engaging way to understand the dynamics of vegetation in the region over the years.\n\n\nThis project encapsulates a meticulous workflow from data extraction to visualization, rendering an engaging narrative of vegetation dynamics in the Sundarbans Mangroves. Through well-structured steps, it delivers an insightful glimpse into the changing vegetation health, underscoring the importance of informed conservation strategies in this ecologically significant region.\n\n\n\nThe code for this project can be found in the GitHub repository and the Colab Notebook"
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html#introduction",
-    "href": "posts/post-with-code/11_post.html#introduction",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "The “Sundarban Shifts” project is focused on monitoring vegetation alterations in the Sundarbans Mangroves, which span across Bangladesh and India. Utilizing the MOD13A2 dataset from MODIS, the endeavor aims to unravel the ecological dynamics in light of climate change, rising sea levels, and human activities. The analysis revolves around the Normalized Difference Vegetation Index (NDVI) to assess vegetation health over time. Leveraging Python libraries for data visualization, the project manifests an interactive geographical portrayal of NDVI variations, encapsulating the essence of this distinctive ecosystem and the urgency of informed conservation strategies."
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html#data-citation",
-    "href": "posts/post-with-code/11_post.html#data-citation",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "The project employs data from the MODIS MOD13A2 dataset, credited to Kamel Didan - University of Arizona, Alfredo Huete - University of Technology Sydney and MODAPS SIPS - NASA (2015). The dataset provides NDVI values at 16-day intervals, which are aggregated annually for this analysis to discern vegetation health and changes over the years in the Sundarbans http://doi.org/10.5067/MODIS/MOD13A2.006."
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html#libraries-and-tools",
-    "href": "posts/post-with-code/11_post.html#libraries-and-tools",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "Essential libraries and tools utilized in this project include:\n\nrasterio: For reading and writing geospatial data.\nee: Google Earth Engine library for geospatial analysis.\nnumpy: For numerical operations.\npandas: For data manipulation and analysis.\nmatplotlib: For data visualization.\nPIL: Python Imaging Library for opening, manipulating, and saving image files.\nimageio: For reading and writing image data.\nosgeo: A set of python bindings for GDAL/OGR library.\nIPython.display: For displaying images."
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html#workflow",
-    "href": "posts/post-with-code/11_post.html#workflow",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "Library Loading:\n\nInstall rasterio and import the required libraries for script execution.\n\nAuthenticate Earth Engine:\n\nAuthenticate and initialize Google Earth Engine to access geospatial datasets.\n\nCalculate Yearly NDVI Values:\n\nDefine the region of interest as Sundarbans Mangroves.\nCreate a function to fetch MODIS NDVI data for a specific year.\nIterate through the years to calculate the mean NDVI for each year, exporting the results to TIFF images.\n\nDisplay a Few of The Plots:\n\nVisualize a subset of the generated NDVI images for selected years using Matplotlib.\n\nCreating the GIF:\n\nDefine a function to normalize array values.\nIterate through each year to read the NDVI images, normalize and apply a custom colormap, and add a year label to each image.\nCreate a GIF from the sequence of images to visualize the time-lapse of NDVI values.\n\nLabeling GIF:\n\nSimilar to the GIF creation step, but with added year labels to each image for better understanding of the time-lapse.\n\n\nSummary:\n\nThe script provides a systematic approach to compute and visualize the trend of vegetation change over the Sundarbans Mangroves region across a span of 24 years. The resulting GIF offers an engaging way to understand the dynamics of vegetation in the region over the years.\n\n\nThis project encapsulates a meticulous workflow from data extraction to visualization, rendering an engaging narrative of vegetation dynamics in the Sundarbans Mangroves. Through well-structured steps, it delivers an insightful glimpse into the changing vegetation health, underscoring the importance of informed conservation strategies in this ecologically significant region."
-  },
-  {
-    "objectID": "posts/post-with-code/11_post.html#code",
-    "href": "posts/post-with-code/11_post.html#code",
-    "title": "Sundarban Shifts",
-    "section": "",
-    "text": "The code for this project can be found in the GitHub repository and the Colab Notebook"
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html",
-    "href": "posts/post-with-code/12_post.html",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "",
-    "text": "ChronoClimateHub serves as a compelling portal where time unfolds the narrative of Earth’s remarkable transformations. Through a series of mesmerizing timelapse videos, viewers can witness significant shifts in climate, biodiversity, and ecological landscapes across different global regions.\n\n\n\n\nThermoPrecipTrends: A journey through temperature and SPEI fluctuations in the contiguous US from 1960 to September 2023.\nSundarbanShifts: Explore the NDVI evolution from 2000 to 2023 within the Sundarbans, the majestic world’s largest mangrove forest.\nAerosolOdyssey: Uncover the absorbing aerosol index variations in New Delhi from November 2018 to August 2023, revealing atmospheric aerosol dynamics.\nSO2Saga: Delve into the sulfur dioxide emission patterns over Staten Island, New York from November 2018 to August 2023, showcasing the interplay of natural and anthropogenic emissions.\n\nAdditional chronicles are in the pipeline to further enrich the narrative of Earth’s changes.\nExplore the app\n\n\n\n\nTemperature and SPEI Data:\n\nTemperature Data Citation: Vose, R. S., Applequist, S., Squires, M., Durre, I., Menne, M. J., Williams, C. N. Jr., Fenimore, C., Gleason, K., & Arndt, D. (2014). NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [9/25/2023].\nSPEI Data: Sourced from the National Drought Mitigation Center.\n\nNDVI Data:\n\nCitation: Didan, K. (2021). MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center. https://doi.org/10.5067/MODIS/MOD13A2.061\n\nAerosol Data:\n\nData comprises the Absorbing Aerosol Index (AAI) pivotal for detecting absorbing aerosol particles in the atmosphere from COPERNICUS/S5P/NRTI/L3_AER_AI.\n\nSO2 Data:\n\nInsights into sulfur dioxide emissions, sourced from the TROPOMI instrument on board the Sentinel-5P satellite, reveal both natural and anthropogenic sources from Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#introduction",
-    "href": "posts/post-with-code/12_post.html#introduction",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "",
-    "text": "ChronoClimateHub serves as a compelling portal where time unfolds the narrative of Earth’s remarkable transformations. Through a series of mesmerizing timelapse videos, viewers can witness significant shifts in climate, biodiversity, and ecological landscapes across different global regions."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#featured-timelapse-chronicles-planetpulse",
-    "href": "posts/post-with-code/12_post.html#featured-timelapse-chronicles-planetpulse",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "",
-    "text": "ThermoPrecipTrends: A journey through temperature and SPEI fluctuations in the contiguous US from 1960 to September 2023.\nSundarbanShifts: Explore the NDVI evolution from 2000 to 2023 within the Sundarbans, the majestic world’s largest mangrove forest.\nAerosolOdyssey: Uncover the absorbing aerosol index variations in New Delhi from November 2018 to August 2023, revealing atmospheric aerosol dynamics.\nSO2Saga: Delve into the sulfur dioxide emission patterns over Staten Island, New York from November 2018 to August 2023, showcasing the interplay of natural and anthropogenic emissions.\n\nAdditional chronicles are in the pipeline to further enrich the narrative of Earth’s changes.\nExplore the app"
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#data-sources",
-    "href": "posts/post-with-code/12_post.html#data-sources",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "",
-    "text": "Temperature and SPEI Data:\n\nTemperature Data Citation: Vose, R. S., Applequist, S., Squires, M., Durre, I., Menne, M. J., Williams, C. N. Jr., Fenimore, C., Gleason, K., & Arndt, D. (2014). NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [9/25/2023].\nSPEI Data: Sourced from the National Drought Mitigation Center.\n\nNDVI Data:\n\nCitation: Didan, K. (2021). MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center. https://doi.org/10.5067/MODIS/MOD13A2.061\n\nAerosol Data:\n\nData comprises the Absorbing Aerosol Index (AAI) pivotal for detecting absorbing aerosol particles in the atmosphere from COPERNICUS/S5P/NRTI/L3_AER_AI.\n\nSO2 Data:\n\nInsights into sulfur dioxide emissions, sourced from the TROPOMI instrument on board the Sentinel-5P satellite, reveal both natural and anthropogenic sources from Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#core-functionality",
-    "href": "posts/post-with-code/12_post.html#core-functionality",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "Core Functionality",
-    "text": "Core Functionality\nChronoClimateHub is built using Streamlit which provides a dynamic and interactive platform for showcasing timelapse videos. Here’s a brief overview of the workflow based on the provided code snippets for different segments of the platform:\n\n1. Page Configuration:\n\nTitle and icon are set for the web page using st.set_page_config.\n\n\n\n2. Sidebar & Main Content Area:\n\nSidebar contains a success message guiding users to ‘Timelapse Videos’.\nA markdown formatted welcome message is displayed on the main content area with basic instructions for navigation.\n\n\n\n3. Video Display:\n\nThe page is divided into two columns using st.columns.\nTimelapse videos are displayed side by side in these columns, each accompanied by a caption.\n\n\n\n4. Data Source Information:\n\nA subheader is created using st.subheader to segregate the data source section.\nInformation about the data sources, including direct links to the datasets, are provided in markdown and text formats.\n\n\n\n5. Data Processing and Calculation:\n\nAnother subheader segregates the data processing section.\nDetails about data acquisition, cleaning, processing, and used libraries are provided.\n\nEach section of the workflow corresponds to a specific feature or functionality within the ChronoClimateHub platform. The sidebar, video display, data source information, and data processing details are presented in a structured and user-friendly manner, making the platform intuitive and informative."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#libraries-and-tools",
-    "href": "posts/post-with-code/12_post.html#libraries-and-tools",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "Libraries and Tools 🛠️",
-    "text": "Libraries and Tools 🛠️\nThe workflow utilizes various Python libraries to handle data and display the content. Key libraries include: - streamlit: For creating the web app and displaying content. - pandas: For data manipulation. - folium: For map rendering. - geopandas: For handling geometric data. - shapely: For manipulation and analysis of planar geometric objects. - ee: For accessing Google Earth Engine data. - rasterio: For reading and writing geospatial raster data (e.g., GeoTIFF). - os: For interacting with the operating system.\nAdditionally, R libraries like progress, transformr, gganimate, raster, ncdf4, and the tidyverse suite of packages are used for data processing, visualization, and animation in the Temperature and SPEI segments of the project."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#streamlit-app-deployment",
-    "href": "posts/post-with-code/12_post.html#streamlit-app-deployment",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "Streamlit App Deployment 🌐",
-    "text": "Streamlit App Deployment 🌐\nThe Streamlit app is hosted online, providing a user-friendly interface for interacting with the visual narratives of Earth’s changes. The st.set_page_config, st.write, st.markdown, st.video, and st.columns functions, among others, are used extensively to structure the content, display the videos, and create an engaging user experience. The sidebar and main content area are organized to provide a straightforward navigation structure, enabling users to easily explore the timelapse chronicles and understand the underlying data and processing steps.\nThrough a combination of Streamlit’s interactive features and Python’s powerful data processing libraries, ChronoClimateHub offers a captivating platform to visualize and explore the profound transformations our planet is undergoing."
-  },
-  {
-    "objectID": "posts/post-with-code/12_post.html#code",
-    "href": "posts/post-with-code/12_post.html#code",
-    "title": "ChronoClimateHub: Visual Narratives of Earth’s Changes",
-    "section": "Code",
-    "text": "Code\nThe code for this project can be found here"
   }
 ]

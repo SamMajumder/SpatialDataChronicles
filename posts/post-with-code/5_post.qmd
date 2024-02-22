@@ -48,7 +48,7 @@ image: "newplot.png"
 
     -   Recursive feature elimination with a random forest algorithm to identify the most important predictors for yield at the national level. The predictors were ranked based on their relative importance in predicting yield using the mean decrease of root mean square error metric.
 
-    ![](YieldForecast_Figure 2.png)
+    ![](YieldForecast_Figure%202.png)
 
 -   **Threshold Analysis**:
 
@@ -68,9 +68,8 @@ image: "newplot.png"
 
         ![](YieldForecast_Figure5.jpg)
 
-```{=html}
 <!-- -->
-```
+
 -   **Future Yield Forecasts at the State Level**:
 
     Average yield forecasts for each of the seven states were examined for three time periods and under different Socio-Economic Pathways (SSP). The latest average annual yield was represented by point estimates, with error bars indicating the standard deviation around the mean. Future yield forecasts were also depicted as point estimates with error bars reflecting the variation (standard error) around these predictions. The lines portrayed yield changes across the time periods and under four SSPs: SSP 126 ("sustainable future"), SSP 245 ("middle of the road"), SSP 375 ("regional rivalry"), and SSP 585 (fossil-fueled development). Each SSP was characterized by specific factors such as global temperature rise, carbon dioxide emissions, economic growth, inequality, and environmental concerns.

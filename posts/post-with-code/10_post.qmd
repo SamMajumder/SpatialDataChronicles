@@ -2,7 +2,7 @@
 title: "Rivers of West Bengal Visualization"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [Data Visualization]
 image: "WestBengal_Rivers.png"
 ---
 
@@ -55,6 +55,6 @@ The script essentially loads necessary libraries and datasets, processes the geo
 
 ![](WestBengal_Rivers.png)
 
-## Code: 
+## Code:
 
 The code for this project can be found in the [GitHub repository](https://github.com/SamMajumder/GeoVizHub/tree/main/Rivers_of_WestBengal)

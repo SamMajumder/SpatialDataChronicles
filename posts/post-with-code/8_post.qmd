@@ -2,7 +2,7 @@
 title: "Aerosol Odyssey: A Journey Through Aerosol Dynamics in New Delhi"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [Data Visualization]
 image: "AerosolOdyssey.gif"
 ---
 

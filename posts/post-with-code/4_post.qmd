@@ -2,15 +2,21 @@
 title: "Visualizing Patient Risk Profiles: An Interactive Exploration"
 author: "Sambadi Majumder, PhD"
 date: "2023-10-23"
-categories: [news, code, analysis]
+categories: [Data Visualization]
 image: "Patient_profile.gif"
 ---
 
-<!DOCTYPE html>
+\<!DOCTYPE html\>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```{=html}
 <style>
   body, html {
     margin: 0;
@@ -26,10 +32,15 @@ image: "Patient_profile.gif"
     border: none; /* Remove border */
   }
 </style>
+```
 </head>
+
 <body>
 
-<iframe src="2_Patient_Risk_Profiles_TidyTuesday.html"></iframe>
+<iframe src="2_Patient_Risk_Profiles_TidyTuesday.html">
+
+</iframe>
 
 </body>
+
 </html>

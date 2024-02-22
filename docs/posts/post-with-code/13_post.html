@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sambadi Majumder, PhD">
-<meta name="dcterms.date" content="2023-10-17">
+<meta name="dcterms.date" content="2023-10-23">
 
-<title>SpatialDataChronicles - Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years</title>
+<title>SpatialDataChronicles - US Temperature Change Analysis (1960 - 2022)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,11 +103,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Exploring Musical Patterns: A Look into Taylor Swift’s Key Modes Over Years</h1>
+      <h1 class="title">US Temperature Change Analysis (1960 - 2022)</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
-                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">Data Visualization</div>
               </div>
                   </div>
   </div>
@@ -125,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 17, 2023</p>
+        <p class="date">October 23, 2023</p>
       </div>
     </div>
     
@@ -143,34 +141,110 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-&lt;!DOCTYPE html&gt;
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This project aims to analyze and visualize the changes in average yearly temperatures across different counties in the US from the year 1960 to 2022. The analysis is performed using R, focusing on spatial data handling, visualization, and data processing.</p>
+<section id="libraries-employed" class="level2">
+<h2 class="anchored" data-anchor-id="libraries-employed">Libraries Employed</h2>
+<ul>
+<li><strong>ncdf4</strong>: Aids in handling netCDF data.</li>
+<li><strong>here</strong>: Utilized for constructing file paths.</li>
+<li><strong>tidyverse</strong>: Essential for data wrangling and visualization.</li>
+<li><strong>terra</strong>: Handy for handling raster data.</li>
+<li><strong>sf</strong>: Engaged for managing spatial data.</li>
+</ul>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<ul>
+<li><strong>Temperature Data</strong>: Acquired from <a href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00332">NOAA Monthly U.S. Climate Gridded Dataset</a>
+<ul>
+<li><strong>Citation</strong>: Vose, Russell S., et al.&nbsp;(2014): NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid), Version 1. [1960 and 2022]. NOAA National Centers for Environmental Information. DOI:10.7289/V5SX6B56 [11/4/2023].</li>
+</ul></li>
+<li><strong>County Centroid Shapefile</strong>: Procured from <a href="https://www.weather.gov/gis/Counties">National Weather Service</a>
+<ul>
+<li><strong>Citation Information</strong>:
+<ul>
+<li><strong>Originator</strong>: National Weather Service</li>
+<li><strong>Publication Date</strong>: 1995</li>
+<li><strong>Title</strong>: Counties of U.S.</li>
+<li><strong>Geospatial Data Presentation Form</strong>: vector digital data</li>
+<li><strong>Publication Place</strong>: Silver Spring, MD</li>
+<li><strong>Publisher</strong>: National Weather Service</li>
+<li><strong>Online Linkage</strong>: <a href="https://www.weather.gov/gis/Counties">National Weather Service Geodata</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection:</h3>
+<ol type="1">
+<li>Procure the average temperature netCDF file from <a href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00332">NOAA</a>.</li>
+<li>Download the US county centroid shapefile from the <a href="https://www.weather.gov/gis/Counties">National Weather Service</a></li>
+</ol>
+</section>
+<section id="data-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-processing">Data Processing:</h3>
+<ol type="1">
+<li>Verify and establish requisite directories for data storage and processing.</li>
+<li>Decompress the downloaded shapefile.</li>
+<li>Load requisite R packages and source custom functions for data processing.</li>
+</ol>
+</section>
+<section id="spatial-data-handling" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data-handling">Spatial Data Handling:</h3>
+<ol type="1">
+<li>Extract and export specific layers from the netCDF file for the years 1960 and 2022.</li>
+<li>Read in the county centroid shapefile and process it for ensuing use.</li>
+</ol>
+</section>
+<section id="data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis">Data Analysis:</h3>
+<ol type="1">
+<li>Extract temperature values for each county for the years 1960 and 2022.</li>
+<li>Calculate the average temperature for each county for both years.</li>
+<li>Compute the temperature change for each county over the examined time span.</li>
+</ol>
+</section>
+<section id="visualization-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-preparation">Visualization Preparation:</h3>
+<ol type="1">
+<li>Categorize temperature change into assorted ranges for enhanced visualization.</li>
+<li>Prepare a color palette and legend for the visualization.</li>
+</ol>
+</section>
+<section id="plot-assembly" class="level3">
+<h3 class="anchored" data-anchor-id="plot-assembly">Plot Assembly:</h3>
+<ol type="1">
+<li>Create a plot illustrating the temperature change across US counties.</li>
+<li>Customize the plot with labels, legend, and title.</li>
+</ol>
+</section>
+<section id="saving-the-plot" class="level3">
+<h3 class="anchored" data-anchor-id="saving-the-plot">Saving the Plot:</h3>
+<ol type="1">
+<li>Store the final plot to a file named Temperature.png.</li>
+</ol>
+</section>
+</section>
+<section id="output" class="level2">
+<h2 class="anchored" data-anchor-id="output">Output</h2>
+<p>A visualization delineating the change in average temperatures across US counties from 1960 to 2022.</p>
+<p><img src="Temperature.png" class="img-fluid"></p>
+</section>
+<section id="custom-functions" class="level2">
+<h2 class="anchored" data-anchor-id="custom-functions">Custom Functions</h2>
+<p>Custom functions are deployed for particular tasks such as extracting and exporting layers from the netCDF file, extracting values from raster data at specified point locations, and processing the data for visualization.</p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>The code for this analysis can be found in the <a href="https://github.com/SamMajumder/GeoVizHub/tree/main/TempDiffUS">project GitHub repository</a></p>
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Hide scrollbars */
-  }
-  iframe {
-    position: absolute;
-    top: 38%;
-    left: 0%;
-    width: 100%;
-    height: 72%;
-    border: none; /* Remove border */
-  }
-</style>
-
-
-<iframe src="1_Taylor_Swift_TidyTuesday.html">
-</iframe>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
